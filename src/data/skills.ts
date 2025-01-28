@@ -1,22 +1,28 @@
 import {
   type IconType,
-  SiAstro,
-  SiBootstrap,
-  SiCss3,
+
+
   SiDocker,
-  SiHtml5,
-  SiJavascript,
+
+
   SiMongodb,
   SiMysql,
   SiNextdotjs,
-  SiNginx,
+
   SiNodedotjs,
   SiPostgresql,
   SiReact,
   SiRedis,
-  SiRubyonrails,
-  SiSass,
+
   SiTailwindcss,
+  SiPython,
+  SiDart,
+  SiZig,
+  SiGo,
+  SiSupabase,
+  SiFirebase,
+  SiFlutter,
+  SiOpenai,
 } from '@icons-pack/react-simple-icons'
 
 const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
@@ -24,30 +30,48 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
     {
       field: 'Frontend',
       skills: [
-        { skill: 'html', icon: SiHtml5 },
-        { skill: 'css', icon: SiCss3 },
-        { skill: 'javascript', icon: SiJavascript },
         { skill: 'react', icon: SiReact },
-        { skill: 'sass', icon: SiSass },
         { skill: 'tailwind', icon: SiTailwindcss },
         { skill: 'nextjs', icon: SiNextdotjs },
-        { skill: 'astro', icon: SiAstro },
-        {
-          skill: 'bootstrap',
-          icon: SiBootstrap,
-        },
+        { skill: 'flutter', icon: SiFlutter },
       ],
     },
     {
       field: 'Backend',
       skills: [
         {
+          skill: 'python',
+          icon: SiPython,
+        },
+        {
+          skill: 'dart',
+          icon: SiDart,
+        },
+        {
+          skill: 'go',
+          icon: SiGo,
+        },
+        {
+          skill: 'zig',
+          icon: SiZig,
+
+        },
+        {
           skill: 'nodejs',
           icon: SiNodedotjs,
         },
         {
-          skill: 'ruby on rails',
-          icon: SiRubyonrails,
+          skill: 'ai',
+          icon: SiOpenai,
+        },
+        {
+          skill: 'firebase',
+          icon: SiFirebase,
+
+        },
+        {
+          skill: 'supabase',
+          icon: SiSupabase,
         },
         {
           skill: 'redis',
@@ -64,10 +88,6 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         {
           skill: 'mysql',
           icon: SiMysql,
-        },
-        {
-          skill: 'nginx',
-          icon: SiNginx,
         },
         {
           skill: 'docker',
