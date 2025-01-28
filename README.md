@@ -1,13 +1,3 @@
-<img src="public/preview.png" />
-
-# Portfolio
-
-Portfolio is a neobrutalism-styled nextjs tailwind template for portfolios.
-
-## Get started
-
-[Create a new repo](https://github.com/neobrutalism-templates/portfolio/generate) from this template.
-
 ### Installation
 
 This template uses `pnpm` package manager so make sure you have it installed.
