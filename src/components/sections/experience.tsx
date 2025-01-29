@@ -13,9 +13,8 @@ export default function Experience() {
             </h3>
 
             <p className="mb-4 mt-0.5 text-sm">
-              {role.startDate} - {role.endDate}
+              {role.location} | {role.startDate} - {role.endDate}
             </p>
-            <p>{role.description}</p>
           </div>
         )
       })}

@@ -32,20 +32,24 @@ export default function Work() {
                 <p className="mt-2">{project.description}</p>
 
                 <div className="mt-8 grid grid-cols-2 gap-5">
-                  <a
-                    className="border-border dark:border-darkBorder dark:bg-secondaryBlack dark:text-darkText shadow-light dark:shadow-dark cursor-pointer rounded-base border-2 bg-white px-4 py-2 text-center text-sm font-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none sm:text-base dark:hover:shadow-none"
-                    href={project.liveLink}
-                    target="_blank"
-                  >
-                    Visit
-                  </a>
-                  <a
-                    className="border-border dark:border-darkBorder dark:bg-secondaryBlack dark:text-darkText shadow-light dark:shadow-dark cursor-pointer rounded-base border-2 bg-white px-4 py-2 text-center text-sm font-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none sm:text-base dark:hover:shadow-none"
-                    href={project.repoUrl}
-                    target="_blank"
-                  >
-                    Github
-                  </a>
+                  {project.liveLink &&
+                    <a
+                      className="border-border dark:border-darkBorder dark:bg-secondaryBlack dark:text-darkText shadow-light dark:shadow-dark cursor-pointer rounded-base border-2 bg-white px-4 py-2 text-center text-sm font-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none sm:text-base dark:hover:shadow-none"
+                      href={project.liveLink}
+                      target="_blank"
+                    >
+                      Visit
+                    </a>
+                  }
+                  {project.repoUrl &&
+                    <a
+                      className="border-border dark:border-darkBorder dark:bg-secondaryBlack dark:text-darkText shadow-light dark:shadow-dark cursor-pointer rounded-base border-2 bg-white px-4 py-2 text-center text-sm font-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none sm:text-base dark:hover:shadow-none"
+                      href={project.repoUrl}
+                      target="_blank"
+                    >
+                      Github
+                    </a>
+                  }
                 </div>
               </div>
             </div>

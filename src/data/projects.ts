@@ -2,16 +2,22 @@ const PROJECTS: {
   name: string
   description: string
   previewImage: string
-  repoUrl: string
-  liveLink: string
+  repoUrl?: string
+  liveLink?: string
 }[] = [
     {
-      name: 'Project 1',
-      description: 'Lorem ipsum dolor sit amet',
-      liveLink: 'https://google.com',
+      name: 'Reptilia',
+      description: 'Smart Reptile Care',
+      liveLink: 'https://play.google.com/store/apps/details?id=solutions.nicode.reptilia',
       previewImage: '/project1.png',
-      repoUrl: 'https://github.com',
     },
+    {
+      name: 'Dartis',
+      description: 'A tiny Redis implementation in Dart for Learning Purposes',
+      repoUrl: 'https://github.com/nicolagheza/dartis',
+      previewImage: '/project1.png',
+    },
+
   ]
 
 export default PROJECTS
