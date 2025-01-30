@@ -9,7 +9,6 @@ import {
   SiMysql,
   SiNextdotjs,
 
-  SiNodedotjs,
   SiPostgresql,
   SiReact,
   SiRedis,
@@ -22,22 +21,19 @@ import {
   SiSupabase,
   SiFirebase,
   SiFlutter,
-  SiOpenai,
+  SiTypescript,
+  SiSqlite,
+  SiPocketbase,
+  SiFastapi,
+  SiCsharp,
+  SiTsnode,
+  SiDotnet,
 } from '@icons-pack/react-simple-icons'
 
 const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
   [
     {
-      field: 'Frontend',
-      skills: [
-        { skill: 'react', icon: SiReact },
-        { skill: 'tailwind', icon: SiTailwindcss },
-        { skill: 'nextjs', icon: SiNextdotjs },
-        { skill: 'flutter', icon: SiFlutter },
-      ],
-    },
-    {
-      field: 'Backend',
+      field: 'Languages',
       skills: [
         {
           skill: 'python',
@@ -57,12 +53,29 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
 
         },
         {
-          skill: 'nodejs',
-          icon: SiNodedotjs,
+          skill: 'typescript',
+          icon: SiTypescript,
         },
         {
-          skill: 'ai',
-          icon: SiOpenai,
+          skill: 'csharp',
+          icon: SiCsharp
+        },
+      ],
+    },
+    {
+      field: 'Backend',
+      skills: [
+        {
+          skill: 'ts-node',
+          icon: SiTsnode,
+        },
+        {
+          skill: 'fastapi',
+          icon: SiFastapi,
+        },
+        {
+          skill: 'dotnet',
+          icon: SiDotnet,
         },
         {
           skill: 'firebase',
@@ -72,6 +85,10 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         {
           skill: 'supabase',
           icon: SiSupabase,
+        },
+        {
+          skill: 'pocketbase',
+          icon: SiPocketbase,
         },
         {
           skill: 'redis',
@@ -90,11 +107,25 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
           icon: SiMysql,
         },
         {
+          skill: 'Sqlite',
+          icon: SiSqlite,
+        },
+        {
           skill: 'docker',
           icon: SiDocker,
         },
+      ]
+    },
+    {
+      field: 'Frontend',
+      skills: [
+        { skill: 'nextjs', icon: SiNextdotjs },
+        { skill: 'react', icon: SiReact },
+        { skill: 'tailwind', icon: SiTailwindcss },
+        { skill: 'flutter', icon: SiFlutter },
       ],
     },
+
   ]
 
 export default SKILLS
