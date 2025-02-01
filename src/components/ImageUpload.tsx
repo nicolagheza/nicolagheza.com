@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Upload, X } from 'lucide-react';
 import Image from 'next/image';
 
@@ -8,6 +8,8 @@ import Image from 'next/image';
 export interface ImageUploadProps {
   onImageUpload?: (file: File) => Promise<void> | void;
   onImageRemove?: () => Promise<void> | void;
+  name?: string;
+  required?: boolean;
   defaultImage?: string;
   className?: string;
   maxSizeMB?: number;
@@ -21,6 +23,14 @@ export const ImageUpload: React.FC<ImageUploadProps> = (props) => {
   const [preview, setPreview] = useState<string | null>(props.defaultImage || null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (preview) {
+        URL.revokeObjectURL(preview);
+      }
+    };
+  }, [preview]);
 
   const validateFile = useCallback((file: File): string | null => {
     if (!props.acceptedTypes?.includes(file.type)) {
@@ -115,6 +125,8 @@ export const ImageUpload: React.FC<ImageUploadProps> = (props) => {
               alt="Preview"
               fill
               className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <button
               onClick={handleRemove}
@@ -137,6 +149,8 @@ export const ImageUpload: React.FC<ImageUploadProps> = (props) => {
         )}
 
         <input
+          name={props.name || 'image'}
+          required={props.required}
           type="file"
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           onChange={handleFileSelect}

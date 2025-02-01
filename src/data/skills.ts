@@ -28,6 +28,12 @@ import {
   SiCsharp,
   SiTsnode,
   SiDotnet,
+  SiPytorch,
+  SiTensorflow,
+  SiKeras,
+  SiScikitlearn,
+  SiOpencv,
+  SiC,
 } from '@icons-pack/react-simple-icons'
 
 const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
@@ -40,25 +46,49 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
           icon: SiPython,
         },
         {
-          skill: 'dart',
-          icon: SiDart,
-        },
-        {
-          skill: 'go',
-          icon: SiGo,
-        },
-        {
-          skill: 'zig',
-          icon: SiZig,
-
-        },
-        {
           skill: 'typescript',
           icon: SiTypescript,
         },
         {
           skill: 'csharp',
           icon: SiCsharp
+        },
+        {
+          skill: 'go',
+          icon: SiGo,
+        },
+        {
+          skill: 'dart',
+          icon: SiDart,
+        },
+        {
+          skill: 'zig',
+          icon: SiZig,
+        },
+      ],
+    },
+    {
+      field: 'Data Sciece & AI',
+      skills: [
+        {
+          skill: 'scikit-learn',
+          icon: SiScikitlearn,
+        },
+        {
+          skill: 'opencv',
+          icon: SiOpencv
+        },
+        {
+          skill: 'tensorflow',
+          icon: SiTensorflow,
+        },
+        {
+          skill: 'keras',
+          icon: SiKeras,
+        },
+        {
+          skill: 'torch',
+          icon: SiPytorch,
         },
       ],
     },
@@ -80,7 +110,6 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         {
           skill: 'firebase',
           icon: SiFirebase,
-
         },
         {
           skill: 'supabase',
@@ -107,7 +136,7 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
           icon: SiMysql,
         },
         {
-          skill: 'Sqlite',
+          skill: 'sqlite',
           icon: SiSqlite,
         },
         {

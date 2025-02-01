@@ -6,14 +6,7 @@ const PAST_ROLES: {
   location: string
 }[] = [
     {
-      company: 'nicode.solutions',
-      role: 'Software Engineer',
-      startDate: 'January 2015',
-      endDate: 'Now',
-      location: 'Remote',
-    },
-    {
-      company: 'Snowit',
+      company: 'Sport it',
       role: 'Backend Developer',
       startDate: 'March 2022',
       endDate: 'Now',
@@ -46,6 +39,13 @@ const PAST_ROLES: {
       startDate: 'July 2017',
       endDate: 'December 2017',
       location: 'Brighton (UK)',
+    },
+    {
+      company: 'nicode.solutions',
+      role: 'Software Engineer',
+      startDate: 'January 2015',
+      endDate: 'Now',
+      location: 'Remote',
     },
   ]
 
