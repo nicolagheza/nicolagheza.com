@@ -24,7 +24,6 @@ import {
   SiSqlite,
   SiPocketbase,
   SiFastapi,
-  SiCsharp,
   SiTsnode,
   SiDotnet,
   SiPytorch,
@@ -45,13 +44,14 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
           icon: SiPython,
         },
         {
+          skill: 'c',
+          icon: SiC
+        },
+        {
           skill: 'typescript',
           icon: SiTypescript,
         },
-        {
-          skill: 'csharp',
-          icon: SiCsharp
-        },
+
         {
           skill: 'go',
           icon: SiGo,

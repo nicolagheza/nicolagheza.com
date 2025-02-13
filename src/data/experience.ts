@@ -14,7 +14,7 @@ const PAST_ROLES: {
     },
     {
       company: 'SteelTrace B.V.',
-      role: 'Backend Developer',
+      role: 'Software Engineer',
       startDate: 'August 2020',
       endDate: 'October 2021',
       location: 'Maastricht (NL)',
@@ -28,14 +28,14 @@ const PAST_ROLES: {
     },
     {
       company: 'Consense Data Exchange',
-      role: 'Fullstack Developer',
+      role: 'Software Engineer',
       startDate: 'July 2018',
       endDate: 'December 2018',
       location: 'Heerlen (NL)',
     },
     {
       company: 'WildFire Learning',
-      role: 'Backend Developer',
+      role: 'Software Engineer',
       startDate: 'July 2017',
       endDate: 'December 2017',
       location: 'Brighton (UK)',
