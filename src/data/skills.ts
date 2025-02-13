@@ -16,7 +16,6 @@ import {
   SiTailwindcss,
   SiPython,
   SiDart,
-  SiZig,
   SiGo,
   SiSupabase,
   SiFirebase,
@@ -60,10 +59,6 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         {
           skill: 'dart',
           icon: SiDart,
-        },
-        {
-          skill: 'zig',
-          icon: SiZig,
         },
       ],
     },
