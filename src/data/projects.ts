@@ -5,19 +5,26 @@ const PROJECTS: {
   repoUrl?: string
   liveLink?: string
 }[] = [
-    {
-      name: 'Deep Learning For Fruits Image Recognition',
-      description: 'This thesis was prepared in partial fulfilment of the requirements for the Degree of Bachelor of Science in Data Science and Knowledge Engineering, Maastricht University, Supervisors: Alexia Briassouli, Gerasimos Spanakis.',
-      repoUrl: 'https://github.com/nicolagheza/DeepFruit',
-      liveLink: '/DeepFruit.pdf',
-      previewImage: '/deepfruit.png',
-    },
-    {
-      name: 'Reptilia',
-      description: 'Smart Reptile Care',
-      liveLink: 'https://play.google.com/store/apps/details?id=solutions.nicode.reptilia',
-      previewImage: '/reptilia.png',
-    },
-  ]
+  {
+    name: 'Crowbuddy',
+    description: '',
+    liveLink: 'http://crowbuddy.nl',
+    previewImage: '/crowbuddy.png',
+  },
+  {
+    name: 'Tiny~',
+    description: 'A list of tiny projects',
+    liveLink: 'https://nicode.solutions',
+    previewImage: '/tiny~.png',
+  },
+  {
+    name: 'Deep Learning For Fruits Image Recognition',
+    description:
+      'This thesis was prepared in partial fulfilment of the requirements for the Degree of Bachelor of Science in Data Science and Knowledge Engineering, Maastricht University, Supervisors: Alexia Briassouli, Gerasimos Spanakis.',
+    repoUrl: 'https://github.com/nicolagheza/DeepFruit',
+    liveLink: '/DeepFruit.pdf',
+    previewImage: '/deepfruit.png',
+  },
+]
 
 export default PROJECTS
