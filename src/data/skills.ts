@@ -1,18 +1,12 @@
 import {
   type IconType,
-
-
   SiDocker,
-
-
   SiMongodb,
   SiMysql,
   SiNextdotjs,
-
   SiPostgresql,
   SiReact,
   SiRedis,
-
   SiTailwindcss,
   SiPython,
   SiDart,
@@ -32,6 +26,7 @@ import {
   SiScikitlearn,
   SiOpencv,
   SiC,
+  SiCsharp,
 } from '@icons-pack/react-simple-icons'
 
 const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
@@ -40,18 +35,21 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
       field: 'Languages',
       skills: [
         {
-          skill: 'python',
-          icon: SiPython,
+          skill: 'c',
+          icon: SiC,
         },
         {
-          skill: 'c',
-          icon: SiC
+          skill: 'c#',
+          icon: SiCsharp,
+        },
+        {
+          skill: 'python',
+          icon: SiPython,
         },
         {
           skill: 'typescript',
           icon: SiTypescript,
         },
-
         {
           skill: 'go',
           icon: SiGo,
@@ -71,7 +69,7 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         },
         {
           skill: 'opencv',
-          icon: SiOpencv
+          icon: SiOpencv,
         },
         {
           skill: 'tensorflow',
@@ -138,7 +136,7 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
           skill: 'docker',
           icon: SiDocker,
         },
-      ]
+      ],
     },
     {
       field: 'Frontend',
@@ -149,7 +147,6 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         { skill: 'flutter', icon: SiFlutter },
       ],
     },
-
   ]
 
 export default SKILLS
