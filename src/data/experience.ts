@@ -6,10 +6,10 @@ const PAST_ROLES: {
   location: string
 }[] = [
   {
-    company: 'nicode.solutions',
+    company: 'nicode.',
     role: 'Knowledge Engineer',
-    startDate: 'January 2015',
-    endDate: 'Now',
+    startDate: 'Undefined',
+    endDate: 'Null',
     location: '🌎',
   },
   {
