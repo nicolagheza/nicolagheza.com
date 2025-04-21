@@ -12,12 +12,6 @@ const PROJECTS: {
     previewImage: '/crowbuddy.png',
   },
   {
-    name: 'Tiny~',
-    description: 'A list of tiny projects',
-    liveLink: 'https://nicode.solutions',
-    previewImage: '/tiny~.png',
-  },
-  {
     name: 'Deep Learning For Fruits Image Recognition',
     description:
       'This thesis was prepared in partial fulfilment of the requirements for the Degree of Bachelor of Science in Data Science and Knowledge Engineering, Maastricht University, Supervisors: Alexia Briassouli, Gerasimos Spanakis.',

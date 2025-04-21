@@ -18,20 +18,20 @@ export default function Nav() {
       text: 'About',
     },
     {
-      path: '/work',
-      text: 'Work',
+      path: '/projects',
+      text: 'Projects',
     },
   ]
 
   return (
     <div className="fixed left-0 top-5 z-50 w-full">
-      <nav className="text-text border-border dark:border-darkBorder shadow-light dark:shadow-dark mx-auto flex w-max gap-5 rounded-base border-2 bg-main p-2.5 px-5 text-sm font-base sm:text-base w450:gap-4">
+      <nav className="w450:gap-4 mx-auto flex w-max gap-5 rounded-base border-2 border-border bg-main p-2.5 px-5 text-sm font-base text-text shadow-light dark:border-darkBorder dark:shadow-dark sm:text-base">
         {links.map((link) => {
           return (
             <Link
               key={link.path}
               className={clsx(
-                'hover:border-border dark:hover:border-darkBorder rounded-base border-2 px-2 py-1 transition-colors',
+                'rounded-base border-2 px-2 py-1 transition-colors hover:border-border dark:hover:border-darkBorder',
                 path === link.path
                   ? 'border-border dark:border-darkBorder'
                   : 'border-transparent',
