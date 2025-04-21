@@ -12,7 +12,7 @@ export default function Home() {
           <p>
             Hi, my name is Nicola Gheza, but you can call me <u>Nicode!</u>
           </p>
-          <p>I am a knowledge engineer based in Valle Camonica, Italy 🏔️🇮🇹.</p>
+          <p>I am a software engineer based in Valle Camonica, Italy 🏔️🇮🇹.</p>
         </div>
         <Links />
       </div>
