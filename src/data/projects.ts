@@ -7,7 +7,8 @@ const PROJECTS: {
 }[] = [
   {
     name: 'Crowbuddy',
-    description: '',
+    description:
+      'We train crows using AI to collect litter in exchange for food',
     liveLink: 'http://crowbuddy.nl',
     previewImage: '/crowbuddy.png',
   },
