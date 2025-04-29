@@ -13,7 +13,7 @@ const PAST_ROLES: {
     location: '🌎',
   },
   {
-    company: 'Sport it',
+    company: 'Sportit s.r.l. (Snowit, etc)',
     role: 'Backend Developer',
     startDate: 'March 2022',
     endDate: 'March 2025',
