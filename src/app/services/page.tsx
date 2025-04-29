@@ -1,4 +1,5 @@
-import { Database, Brain, Eye } from 'lucide-react'
+import { Database, Brain, Eye, ArrowRight, Calendar } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Services() {
   return (
@@ -177,6 +178,24 @@ export default function Services() {
             </div>
           </div>
         </section>
+      </div>
+      <div className="mt-16 rounded-base border-2 border-border bg-main p-6 shadow-light dark:border-darkBorder dark:shadow-dark">
+        <h3 className="mb-4 text-xl font-heading sm:text-2xl">
+          Ready to discuss your project?
+        </h3>
+        <p className="mb-6">
+          I&apos;d love to hear about your specific needs and how I can help you
+          leverage AI and data solutions for your business.
+        </p>
+        <a
+          className="inline-flex cursor-pointer items-center gap-2 rounded-base border-2 border-border bg-white px-4 py-2 text-center text-sm font-base shadow-light transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-secondaryBlack dark:text-darkText dark:shadow-dark dark:hover:shadow-none sm:text-base"
+          href="https://calendly.com/nicode-solutions/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Calendar className="h-5 w-5" />
+          Schedule a Call
+        </a>
       </div>
     </div>
   )
