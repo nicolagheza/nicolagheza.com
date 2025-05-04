@@ -39,7 +39,7 @@ export default function Services() {
               <div>
                 <h3 className="mb-2 text-lg font-medium">Server-Side Logic</h3>
                 <p>
-                  Develop the core business logic and processes that run on the server, ensuring performance and reliability..
+                  Develop the core business logic and processes that run on the server, ensuring performance and reliability.
                 </p>
               </div>
               <div>
@@ -51,7 +51,7 @@ export default function Services() {
               <div>
                 <h3 className="mb-2 text-lg font-medium">Scalable Architecture</h3>
                 <p>
-                  Connect disparate systems and services to enable seamless data flow and functionality.
+                  Design and build backend systems that can handle increasing amounts of data and user traffic.
                 </p>
               </div>
             </div>
