@@ -13,7 +13,6 @@ import {
   SiGo,
   SiSupabase,
   SiFirebase,
-  SiFlutter,
   SiTypescript,
   SiSqlite,
   SiPocketbase,
@@ -53,10 +52,6 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         {
           skill: 'go',
           icon: SiGo,
-        },
-        {
-          skill: 'dart',
-          icon: SiDart,
         },
       ],
     },
@@ -144,7 +139,6 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         { skill: 'nextjs', icon: SiNextdotjs },
         { skill: 'react', icon: SiReact },
         { skill: 'tailwind', icon: SiTailwindcss },
-        { skill: 'flutter', icon: SiFlutter },
       ],
     },
   ]

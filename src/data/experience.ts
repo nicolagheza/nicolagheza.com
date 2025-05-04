@@ -13,7 +13,7 @@ const PAST_ROLES: {
     location: '🌎',
   },
   {
-    company: 'Sportit s.r.l. [Snowit, BikeIt, Discovera, Tribala]',
+    company: 'Sportit [Snowit, Bikeit, Discovera, Tribala]',
     role: 'Backend Developer',
     startDate: 'March 2022',
     endDate: 'March 2025',

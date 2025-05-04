@@ -1,5 +1,4 @@
-import { Database, Brain, Eye, ArrowRight, Calendar } from 'lucide-react'
-import Link from 'next/link'
+import { Database, Brain, Eye, Server, Calendar } from 'lucide-react'
 
 export default function Services() {
   return (
@@ -7,12 +6,58 @@ export default function Services() {
       <h1 className="mb-8 text-2xl font-heading sm:text-4xl">Services</h1>
 
       <p className="mb-12 text-lg">
-        I offer specialized AI and data services to help businesses leverage
-        technology for improved efficiency, insights, and automation. Below are
-        the key service areas I provide:
+        Leveraging expertise in AI, data science, and robust backend engineering,
+        I offer specialized services to help businesses leverage technology for improved efficiency, insights, and automation.
+        Below are the key service areas I provide:
       </p>
 
       <div className="space-y-16">
+        {/* Backend Engineerig Section */}
+        <section>
+          <div className="mb-4 flex items-center gap-3">
+            <Server className="h-8 w-8" />
+            <h2 className="text-2xl font-semibold">Backend Engineering</h2>
+          </div>
+          <div className="border-l-2 border-purple-300 pl-4">
+            <p className="mb-4">
+              Building the foundational server-side logic, databases, and APIs that power your applications and data services.
+            </p>
+            <div className="mt-6 space-y-6">
+              <div>
+                <h3 className="mb-2 text-lg font-medium">Custom API Development</h3>
+                <p>
+                  Design and implement robust and scalable APIs to connect your front-end applications with
+                  backend services and data.
+                </p>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-medium">Database Design & Management</h3>
+                <p>
+                  Create, optimize, and manage databases to store and retrieve data efficiently for your applications and AI models.
+                </p>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-medium">Server-Side Logic</h3>
+                <p>
+                  Develop the core business logic and processes that run on the server, ensuring performance and reliability..
+                </p>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-medium">System Integration</h3>
+                <p>
+                  Connect disparate systems and services to enable seamless data flow and functionality.
+                </p>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-medium">Scalable Architecture</h3>
+                <p>
+                  Connect disparate systems and services to enable seamless data flow and functionality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Computer Vision Section */}
         <section>
           <div className="mb-4 flex items-center gap-3">
