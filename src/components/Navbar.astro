@@ -1,0 +1,80 @@
+---
+import { navigation } from "../data/content";
+
+interface Props {
+  currentPage: string;
+}
+
+const { currentPage } = Astro.props;
+---
+
+<nav class="sticky top-0 z-50 bg-cream border-b-4 border-brutal-black">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+    <a
+      href="/"
+      class="font-heading font-extrabold text-2xl bg-brutal-yellow text-brutal-black px-3 py-1 border-3 border-brutal-black rounded-lg shadow-brutal-sm hover:scale-105 hover:-rotate-2 transition-all duration-300 ease-bounce inline-block"
+    >
+      NG
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="nav-toggle"
+      class="md:hidden flex flex-col gap-1.5 bg-brutal-pink border-3 border-brutal-black rounded-lg p-2 shadow-brutal-sm hover:scale-110 hover:rotate-5 transition-all duration-300 ease-bounce"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
+      <span class="block w-6 h-0.5 bg-brutal-black rounded-sm"></span>
+      <span class="block w-6 h-0.5 bg-brutal-black rounded-sm"></span>
+      <span class="block w-6 h-0.5 bg-brutal-black rounded-sm"></span>
+    </button>
+
+    <!-- Desktop links -->
+    <div id="nav-links" class="hidden md:flex gap-2 items-center">
+      {navigation.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "font-heading font-semibold text-sm px-4 py-2 rounded-lg border-3 border-transparent transition-all duration-300 ease-bounce",
+            currentPage === item.href
+              ? "bg-brutal-blue text-white border-brutal-black shadow-brutal-sm"
+              : "hover:bg-brutal-black hover:text-white hover:border-brutal-black hover:-translate-y-1 hover:-rotate-1 hover:shadow-brutal-sm",
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t-4 border-brutal-black bg-cream px-4 pb-4">
+    {navigation.map((item) => (
+      <a
+        href={item.href}
+        class:list={[
+          "block font-heading font-semibold text-center py-3 px-4 rounded-lg border-3 border-transparent transition-all duration-300 ease-bounce mb-1",
+          currentPage === item.href
+            ? "bg-brutal-blue text-white border-brutal-black shadow-brutal-sm"
+            : "hover:bg-brutal-black hover:text-white hover:border-brutal-black",
+        ]}
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("mobile-menu");
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        const isOpen = !menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
+  });
+</script>
