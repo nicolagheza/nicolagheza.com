@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicola Gheza - Software Engineer | Data Science & AI</title>
+  <meta name="description" content="Nicola Gheza (Nicode) - Software Engineer based in Italy, specializing in Data Science, Artificial Intelligence, and Backend Engineering.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">NG</a>
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Marquee Banner -->
+  <div class="marquee" style="background: var(--yellow);">
+    <div class="marquee-inner">
+      <span class="marquee-item">SOFTWARE ENGINEER <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">DATA SCIENCE <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">ARTIFICIAL INTELLIGENCE <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">BACKEND DEVELOPMENT <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">COMPUTER VISION <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">CLOUD INFRASTRUCTURE <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">SOFTWARE ENGINEER <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">DATA SCIENCE <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">ARTIFICIAL INTELLIGENCE <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">BACKEND DEVELOPMENT <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">COMPUTER VISION <span class="marquee-dot">&bull;</span></span>
+      <span class="marquee-item">CLOUD INFRASTRUCTURE <span class="marquee-dot">&bull;</span></span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Floating decorations -->
+    <div class="hero-deco hero-deco--1"></div>
+    <div class="hero-deco hero-deco--2"></div>
+    <div class="hero-deco hero-deco--3"></div>
+    <div class="hero-deco hero-deco--4"></div>
+    <div class="hero-deco hero-deco--5"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-name">
+        <span class="hero-name-highlight">Nicola Gheza</span>
+      </h1>
+
+      <div class="hero-subtitle">
+        <span class="hero-subtitle-badge">Software Engineer</span>
+        <span class="hero-subtitle-badge hero-subtitle-badge--pink">Data Science</span>
+        <span class="hero-subtitle-badge hero-subtitle-badge--green">&amp; Artificial Intelligence</span>
+      </div>
+
+      <p class="hero-bio">
+        Hi, my name is Nicola Gheza, but you can call me <span class="nickname">Nicode</span>! I'm a software engineer based in Valle Camonica, Italy, passionate about building solutions at the intersection of software development, data science, and artificial intelligence.
+      </p>
+
+      <div class="hero-links">
+        <a href="mailto:nicode.solutions@gmail.com" class="btn btn--pink btn--lg">
+          Email Me
+        </a>
+        <a href="https://github.com/nicolagheza" target="_blank" rel="noopener noreferrer" class="btn btn--black btn--lg">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/nicola-gheza-9995bb116/" target="_blank" rel="noopener noreferrer" class="btn btn--blue btn--lg">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="background: var(--black); color: var(--white);">
+    <div class="footer-inner">
+      <p class="footer-text">Nicola Gheza &copy; 2026 &mdash; Built with curiosity and a love for code.</p>
+      <div class="footer-links">
+        <a href="mailto:nicode.solutions@gmail.com" style="color: var(--yellow);">Email</a>
+        <a href="https://github.com/nicolagheza" target="_blank" rel="noopener noreferrer" style="color: var(--green);">GitHub</a>
+        <a href="https://www.linkedin.com/in/nicola-gheza-9995bb116/" target="_blank" rel="noopener noreferrer" style="color: var(--blue);">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* Neo-Brutalism Theme */
+@theme {
+  --font-heading: "Syne", sans-serif;
+  --font-body: "Outfit", sans-serif;
+
+  --color-cream: #fef3e2;
+  --color-brutal-blue: #4361ee;
+  --color-brutal-pink: #f72585;
+  --color-brutal-yellow: #ffd60a;
+  --color-brutal-green: #80ed99;
+  --color-brutal-black: #1a1a1a;
+
+  --shadow-brutal-sm: 4px 4px 0 #1a1a1a;
+  --shadow-brutal-md: 6px 6px 0 #1a1a1a;
+  --shadow-brutal-lg: 8px 8px 0 #1a1a1a;
+  --shadow-brutal-xl: 10px 10px 0 #1a1a1a;
+
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.08); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-brutal-black);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

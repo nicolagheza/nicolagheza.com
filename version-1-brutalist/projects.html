@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Nicola Gheza</title>
+  <meta name="description" content="Projects by Nicola Gheza — Crowbuddy, Deep Learning for Fruits Image Recognition, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__brand"><a href="index.html">N.G.</a></div>
+      <button class="nav__toggle" onclick="document.querySelector('.nav__links').classList.toggle('open')" aria-label="Toggle menu">+</button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <h1 class="page-header__title stagger">
+        <span>Pro</span><span class="outline">jects</span>
+      </h1>
+    </header>
+
+    <!-- PROJECTS LIST -->
+    <section class="projects-list">
+
+      <!-- Project 1: Crowbuddy -->
+      <article class="project">
+        <div class="project__number">01</div>
+        <div class="project__content">
+          <h2 class="project__title">Crowbuddy</h2>
+          <p class="project__description">
+            We train crows using AI to collect litter in exchange for food.
+          </p>
+          <div class="project__links">
+            <a href="http://crowbuddy.nl" target="_blank" rel="noopener noreferrer" class="project__link project__link--primary">Website &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: DeepFruit -->
+      <article class="project">
+        <div class="project__number">02</div>
+        <div class="project__content">
+          <h2 class="project__title">Deep Learning For Fruits Image Recognition</h2>
+          <p class="project__description">
+            BSc thesis at Maastricht University exploring deep learning techniques for fruit image recognition and classification.
+          </p>
+          <p class="project__meta">Supervisors: Alexia Briassouli, Gerasimos Spanakis</p>
+          <div class="project__links">
+            <a href="https://github.com/nicolagheza/DeepFruit" target="_blank" rel="noopener noreferrer" class="project__link project__link--primary">GitHub &rarr;</a>
+            <a href="/DeepFruit.pdf" target="_blank" rel="noopener noreferrer" class="project__link">PDF &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <p class="cta__text">Have a project in mind?</p>
+      <a href="https://calendly.com/nicode-solutions/30min" target="_blank" rel="noopener noreferrer" class="cta__button">Let's Talk &rarr;</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer__text">&copy; 2026 Nicola Gheza</span>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+    </div>
+  </footer>
+
+</body>
+</html>
