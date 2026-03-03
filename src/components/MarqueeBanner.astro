@@ -1,0 +1,19 @@
+---
+interface Props {
+  items: readonly string[];
+  bgColor?: string;
+}
+
+const { items, bgColor = "bg-brutal-yellow" } = Astro.props;
+const doubled = [...items, ...items];
+---
+
+<div class:list={["overflow-hidden border-y-3 border-brutal-black py-2.5 whitespace-nowrap", bgColor]}>
+  <div class="inline-flex animate-[marquee_20s_linear_infinite]">
+    {doubled.map((item) => (
+      <span class="font-heading font-extrabold text-sm px-8 shrink-0">
+        {item} <span class="text-brutal-pink">&bull;</span>
+      </span>
+    ))}
+  </div>
+</div>

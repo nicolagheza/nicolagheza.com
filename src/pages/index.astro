@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MarqueeBanner from "../components/MarqueeBanner.astro";
+import HeroSection from "../components/HeroSection.astro";
+import { homepage } from "../data/content";
 ---
 
 <BaseLayout currentPage="/">
-  <section class="min-h-screen flex items-center justify-center p-8">
-    <h1 class="font-heading font-extrabold text-6xl bg-brutal-yellow text-brutal-black px-6 py-2 border-4 border-brutal-black rounded-2xl shadow-brutal-lg inline-block -rotate-2">
-      Nicola Gheza
-    </h1>
-  </section>
+  <MarqueeBanner items={homepage.marqueeItems} />
+  <HeroSection />
 </BaseLayout>
