@@ -24,7 +24,7 @@ const colorMap = {
       </span>
     </h1>
 
-    <div class="font-heading font-bold text-[clamp(1rem,2.5vw,1.5rem)] my-6 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.3s_both]">
+    <div class="font-heading font-bold text-[clamp(1rem,2.5vw,1.5rem)] mt-6 mb-0 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.3s_both]">
       {homepage.subtitles.map((sub) => (
         <span class:list={[
           "inline-block px-[0.8em] py-[0.3em] border-3 border-brutal-black rounded-lg shadow-brutal-sm m-1 hover:-translate-y-1 hover:rotate-2 hover:shadow-brutal-md transition-all duration-300 ease-bounce",
@@ -35,7 +35,11 @@ const colorMap = {
       ))}
     </div>
 
-    <p class="text-lg leading-relaxed max-w-xl mx-auto my-8 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.5s_both]" set:html={homepage.bio} />
+    <p class="font-heading font-semibold text-[clamp(0.9rem,2vw,1.1rem)] mt-3 tracking-wide uppercase text-brutal-black/70 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.4s_both]">
+      {homepage.tagline}
+    </p>
+
+    <p class="text-lg leading-relaxed max-w-xl mx-auto mt-2 mb-8 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.5s_both]" set:html={homepage.bio} />
 
     <div class="flex gap-4 justify-center flex-wrap mt-10 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.7s_both]">
       {homepage.links.map((link) => (
@@ -55,18 +59,3 @@ const colorMap = {
   </div>
 </section>
 
-<style>
-  .nickname {
-    background: var(--color-brutal-pink);
-    color: white;
-    padding: 0.1em 0.4em;
-    border-radius: 8px;
-    border: 2px solid var(--color-brutal-black);
-    font-weight: 600;
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .nickname:hover {
-    transform: rotate(-3deg) scale(1.05);
-  }
-</style>

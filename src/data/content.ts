@@ -14,11 +14,12 @@ export const navigation = [
 export const homepage = {
   heading: "Nicola Gheza",
   subtitles: [
-    { text: "Software Engineer", color: "blue" as const },
+    { text: "Software Engineering", color: "blue" as const },
     { text: "Data Science", color: "pink" as const },
-    { text: "& Artificial Intelligence", color: "green" as const },
+    { text: "Artificial Intelligence", color: "green" as const },
   ],
-  bio: 'Hi, my name is Nicola Gheza, but you can call me <span class="nickname">Nicode</span>! I\'m a software engineer based in Valle Camonica, Italy, passionate about building solutions at the intersection of software development, data science, and artificial intelligence.',
+  tagline: 'AI Engineer | BSc Data Science & AI (Maastricht University)',
+  bio: 'Driven by curiosity and technical precision, I build at the intersection of scalable backend architecture and artificial intelligence. From designing high-performance APIs to deploying ML/DL and Generative AI workflows, I specialize in engineering data-driven solutions that are as robust as they are intelligent. Based in the heart of Valle Camonica, Italy.',
   links: [
     { label: "Email Me", href: "mailto:nicode.solutions@gmail.com", color: "pink" as const },
     { label: "GitHub", href: "https://github.com/nicolagheza", color: "black" as const, external: true },
@@ -36,8 +37,9 @@ export const homepage = {
 
 export const about = {
   bio: [
-    "Hi, I'm Nicola, an Italian Software & AI Engineer with a strong backend development background. I hold a BSc in Data Science & AI from Maastricht University and have experience building scalable systems, AI-driven solutions, and efficient backend architectures.",
-    "I love tackling complex problems, optimizing performance, and exploring emerging technologies. Whether it's designing robust APIs, working with cloud infrastructures, or experimenting with AI, I'm always driven by curiosity and innovation.",
+    "I'm Nicola, an Italian <strong>AI Engineer</strong> with a BSc in <strong>Data Science & AI</strong> from Maastricht University.",
+    "I specialize in the intersection of <strong>Software Engineering</strong> and <strong>ML/DL/GenAI</strong>, focusing on building scalable, production-grade systems.",
+    "My expertise lies in bridging the gap between <strong>advanced model architecture</strong> and <strong>robust backend infrastructure</strong> to solve complex, real-world problems.",
   ],
   skills: [
     {

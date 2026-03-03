@@ -14,7 +14,7 @@ import { about } from "../data/content";
 
     <div class="bg-white border-4 border-brutal-black rounded-2xl shadow-brutal-md p-8 mb-12 hover:-translate-y-1 hover:-rotate-[0.5deg] hover:shadow-brutal-lg transition-all duration-300 ease-bounce" data-reveal>
       {about.bio.map((paragraph) => (
-        <p class="text-lg leading-relaxed mb-4 last:mb-0">{paragraph}</p>
+        <p class="text-lg leading-relaxed mb-4 last:mb-0" set:html={paragraph} />
       ))}
     </div>
 
