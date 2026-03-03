@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { services } from "../data/content";
+---
+
+<BaseLayout title="Services" currentPage="/services">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <h1 class="font-heading font-extrabold text-4xl inline-block px-5 py-2 bg-brutal-yellow text-brutal-black border-4 border-brutal-black rounded-xl shadow-brutal-md mb-6 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_both]">
+      Services
+    </h1>
+
+    <p class="text-lg leading-relaxed max-w-3xl mb-10 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.2s_both]">
+      {services.intro}
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+      {services.categories.map((cat, i) => (
+        <div data-reveal data-reveal-delay={String(i + 1)}>
+          <ServiceCard
+            title={cat.title}
+            icon={cat.icon}
+            color={cat.color}
+            description={cat.description}
+            items={cat.items.map(item => ({ name: item.name, description: item.description }))}
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-brutal-pink text-white border-4 border-brutal-black rounded-2xl shadow-brutal-lg p-12 text-center" data-reveal>
+      <h2 class="font-heading font-extrabold text-3xl mb-4">{services.cta.text}</h2>
+      <p class="text-lg opacity-90 mb-6">{services.cta.subtext}</p>
+      <a
+        href={services.cta.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block font-heading font-bold text-lg px-8 py-4 bg-brutal-yellow text-brutal-black border-4 border-brutal-black rounded-xl shadow-brutal-md hover:-translate-y-1 hover:scale-[1.03] hover:shadow-brutal-lg active:translate-y-0.5 active:shadow-brutal-sm transition-all duration-300 ease-bounce"
+      >
+        {services.cta.label} &rarr;
+      </a>
+    </div>
+  </div>
+</BaseLayout>
