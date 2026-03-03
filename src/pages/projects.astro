@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/content";
+---
+
+<BaseLayout title="Projects" currentPage="/projects">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <h1 class="font-heading font-extrabold text-4xl inline-block px-5 py-2 bg-brutal-green text-brutal-black border-4 border-brutal-black rounded-xl shadow-brutal-md mb-8 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_both]">
+      Projects
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {projects.map((project, i) => (
+        <div data-reveal data-reveal-delay={String(i + 1)}>
+          <ProjectCard
+            title={project.title}
+            type={project.type}
+            description={project.description}
+            color={project.color}
+            links={project.links.map(l => ({ label: l.label, href: l.href, external: l.external }))}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

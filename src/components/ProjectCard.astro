@@ -1,0 +1,49 @@
+---
+interface ProjectLink {
+  label: string;
+  href: string;
+  external: boolean;
+}
+
+interface Props {
+  title: string;
+  type: string;
+  description: string;
+  color: "blue" | "pink" | "green" | "yellow";
+  links: ProjectLink[];
+}
+
+const { title, type, description, color, links } = Astro.props;
+
+const bannerColors = {
+  blue: "bg-brutal-blue text-white",
+  pink: "bg-brutal-pink text-white",
+  green: "bg-brutal-green text-brutal-black",
+  yellow: "bg-brutal-yellow text-brutal-black",
+} as const;
+---
+
+<div class="bg-white border-4 border-brutal-black rounded-2xl shadow-brutal-md overflow-hidden hover:-translate-y-1 hover:-rotate-[0.5deg] hover:shadow-brutal-lg transition-all duration-300 ease-bounce flex flex-col">
+  <div class:list={["px-8 py-6 border-b-4 border-brutal-black", bannerColors[color]]}>
+    <h2 class="font-heading font-extrabold text-2xl mb-2">{title}</h2>
+    <span class="inline-block font-heading font-semibold text-xs px-3 py-1 border-2 border-brutal-black rounded-lg bg-white text-brutal-black shadow-[2px_2px_0_var(--color-brutal-black)]">
+      {type}
+    </span>
+  </div>
+
+  <div class="p-8 flex-1 flex flex-col">
+    <p class="text-base leading-relaxed mb-5 flex-1">{description}</p>
+    <div class="flex gap-3 flex-wrap">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          class="inline-block font-heading font-bold text-sm px-5 py-2.5 bg-brutal-black text-white border-3 border-brutal-black rounded-xl shadow-brutal-sm hover:-translate-y-1 hover:scale-[1.03] hover:shadow-brutal-md active:translate-y-0.5 transition-all duration-300 ease-bounce"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
