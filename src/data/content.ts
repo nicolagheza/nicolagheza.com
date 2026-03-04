@@ -1,7 +1,6 @@
 export const siteConfig = {
   title: "Nicola Gheza",
-  description:
-    "Software Engineer specializing in Data Science, AI, and Backend Engineering",
+  description: "AI Engineer | BSc Data Science & Artificial Intelligence",
   author: "Nicola Gheza",
 } as const;
 
