@@ -114,7 +114,7 @@ export const about = {
   experience: [
     {
       number: 1,
-      role: "Knowledge Engineer",
+      role: "AI Engineer",
       company: "nicode.",
       location: "Remote",
       dates: "Current",
@@ -156,7 +156,7 @@ export const about = {
     },
     {
       number: 6,
-      role: "Software Engineer",
+      role: "AI Engineer",
       company: "WildFire Learning",
       location: "Brighton (UK)",
       dates: "July 2017 - December 2017",
