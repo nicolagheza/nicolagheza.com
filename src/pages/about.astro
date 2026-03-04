@@ -25,7 +25,7 @@ import { about } from "../data/content";
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
       {about.focusAreas.map((area, i) => (
         <div data-reveal data-reveal-delay={String(i + 1)}>
-          <FocusArea title={area.title} description={area.description} color={area.color} />
+          <FocusArea title={area.title} focus={area.focus} details={area.details} impact={area.impact} color={area.color} />
         </div>
       ))}
     </div>

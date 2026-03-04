@@ -61,26 +61,54 @@ export const about = {
     {
       title: "Model Engineering & Training",
       color: "blue" as const,
-      description:
-        "Not just consuming models, but crafting them to solve specific domain problems. Fine-tuning LLMs, computer vision, and deep learning optimization.",
+      focus:
+        "Architecting and optimizing high-performance ML/DL models across diverse domains.",
+      details: [
+        "Domain-specific Fine-Tuning (NLP, CV, Audio)",
+        "Hyperparameter Optimization (HPO)",
+        "Model Compression (Quantization/Pruning)",
+      ],
+      impact:
+        "Moving beyond generic APIs to craft specialized, efficient models that balance accuracy with computational constraints.",
     },
     {
       title: "AI Orchestration & MLOps",
       color: "pink" as const,
-      description:
-        "Ensuring models remain robust, versioned, and performant after they leave the notebook. CI/CD for ML, model monitoring, and agentic workflows.",
+      focus:
+        "Bridging the gap between experimental notebooks and reliable production environments.",
+      details: [
+        "Agentic Workflows",
+        "CI/CD for Machine Learning",
+        "Evaluation Frameworks & AI Guardrails",
+      ],
+      impact:
+        "Ensuring AI systems remain robust, observable, and self-healing while maintaining high reliability in the wild.",
     },
     {
       title: "High-Performance AI Backend",
       color: "green" as const,
-      description:
-        "Building the high-throughput systems that power real-time AI inference at scale. Scalable APIs, distributed systems, and vector databases for RAG.",
+      focus:
+        "Building the industrial-strength infrastructure required to serve complex AI workloads.",
+      details: [
+        "Distributed Systems",
+        "Vector Databases for RAG",
+        "Low-Latency API Design",
+      ],
+      impact:
+        "Creating the scalable backbone necessary to handle non-deterministic AI tasks at enterprise scale with minimal latency.",
     },
     {
       title: "Data-Centric Engineering",
       color: "yellow" as const,
-      description:
-        "Streamlining the flow of raw data into high-signal training sets and context-aware inputs. ETL/ELT pipelines, feature engineering, and stream processing.",
+      focus:
+        "Designing high-signal data foundations to fuel modern intelligence.",
+      details: [
+        "Automated Data Labeling",
+        "Real-Time Stream Processing",
+        "Feature Store Architecture",
+      ],
+      impact:
+        "Streamlining the flow of raw data into high-quality, context-aware inputs that dictate the ultimate success of the model.",
     },
   ],
   experience: [

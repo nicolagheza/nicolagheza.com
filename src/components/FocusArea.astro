@@ -1,11 +1,13 @@
 ---
 interface Props {
   title: string;
-  description: string;
+  focus: string;
+  details: string[];
+  impact: string;
   color: "blue" | "pink" | "green" | "yellow";
 }
 
-const { title, description, color } = Astro.props;
+const { title, focus, details, impact, color } = Astro.props;
 
 const cardColors = {
   blue: "bg-brutal-blue",
@@ -25,7 +27,17 @@ const textColor = color === "yellow" || color === "green" ? "text-brutal-black" 
   <h3 class="font-heading font-extrabold text-lg mb-3 inline-block px-3 py-1 border-2 border-brutal-black rounded-lg bg-white text-brutal-black shadow-[3px_3px_0_var(--color-brutal-black)]">
     {title}
   </h3>
+  <p class="text-sm font-bold leading-relaxed mb-3">
+    {focus}
+  </p>
+  <div class="flex flex-wrap gap-2 mb-3">
+    {details.map((tag) => (
+      <span class="bg-white text-brutal-black border-2 border-brutal-black rounded-full px-3 py-1 text-xs font-semibold">
+        {tag}
+      </span>
+    ))}
+  </div>
   <p class="text-sm font-medium leading-relaxed">
-    {description}
+    {impact}
   </p>
 </div>
