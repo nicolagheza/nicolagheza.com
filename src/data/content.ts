@@ -41,26 +41,26 @@ export const about = {
     "I specialize in the intersection of <strong>Software Engineering</strong> and <strong>ML/DL/GenAI</strong>, focusing on building scalable, production-grade systems.",
     "My expertise lies in bridging the gap between <strong>advanced model architecture</strong> and <strong>robust backend infrastructure</strong> to solve complex, real-world problems.",
   ],
-  skills: [
+  focusAreas: [
     {
-      category: "Languages",
+      title: "Backend Systems",
       color: "blue" as const,
-      items: ["C", "C#", "Python", "TypeScript", "Go"],
+      description: "APIs, databases, scalable architecture",
     },
     {
-      category: "Data Science & AI",
+      title: "AI & Machine Learning",
       color: "pink" as const,
-      items: ["scikit-learn", "OpenCV", "TensorFlow", "Keras", "PyTorch"],
+      description: "ML/DL pipelines, computer vision, generative AI, AI agents",
     },
     {
-      category: "Backend",
+      title: "Data Engineering",
       color: "green" as const,
-      items: ["ts-node", "FastAPI", ".NET", "Firebase", "Supabase", "PocketBase", "Redis", "PostgreSQL", "MongoDB", "MySQL", "SQLite", "Docker"],
+      description: "Data pipelines, processing, visualization",
     },
     {
-      category: "Frontend",
+      title: "Cloud & DevOps",
       color: "yellow" as const,
-      items: ["Next.js", "React", "Tailwind"],
+      description: "Containerization, deployment, infrastructure",
     },
   ],
   experience: [

@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  color: "blue" | "pink" | "green" | "yellow";
+}
+
+const { title, description, color } = Astro.props;
+
+const cardColors = {
+  blue: "bg-brutal-blue",
+  pink: "bg-brutal-pink",
+  green: "bg-brutal-green",
+  yellow: "bg-brutal-yellow",
+} as const;
+
+const textColor = color === "yellow" || color === "green" ? "text-brutal-black" : "text-white";
+---
+
+<div class:list={[
+  "border-4 border-brutal-black rounded-2xl shadow-brutal-md p-6 hover:-translate-y-1 hover:-rotate-[0.5deg] hover:shadow-brutal-lg transition-all duration-300 ease-bounce",
+  cardColors[color],
+  textColor,
+]}>
+  <h3 class="font-heading font-extrabold text-lg mb-3 inline-block px-3 py-1 border-2 border-brutal-black rounded-lg bg-white text-brutal-black shadow-[3px_3px_0_var(--color-brutal-black)]">
+    {title}
+  </h3>
+  <p class="text-sm font-medium leading-relaxed">
+    {description}
+  </p>
+</div>

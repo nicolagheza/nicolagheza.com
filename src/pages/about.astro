@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SkillGroup from "../components/SkillGroup.astro";
+import FocusArea from "../components/FocusArea.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
 import { about } from "../data/content";
 ---
@@ -19,13 +19,13 @@ import { about } from "../data/content";
     </div>
 
     <h2 class="font-heading font-extrabold text-3xl inline-block px-5 py-2 bg-brutal-pink text-white border-4 border-brutal-black rounded-xl shadow-brutal-md mb-6" data-reveal>
-      Skills
+      Focus Areas
     </h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-      {about.skills.map((skill, i) => (
+      {about.focusAreas.map((area, i) => (
         <div data-reveal data-reveal-delay={String(i + 1)}>
-          <SkillGroup category={skill.category} items={[...skill.items]} color={skill.color} />
+          <FocusArea title={area.title} description={area.description} color={area.color} />
         </div>
       ))}
     </div>
