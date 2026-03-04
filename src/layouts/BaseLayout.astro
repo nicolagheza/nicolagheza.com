@@ -36,12 +36,12 @@ const fullTitle = title === siteConfig.title ? title : `${title} | ${siteConfig.
     <title>{fullTitle}</title>
     <ClientRouter />
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[9999] font-heading font-bold bg-brutal-yellow text-brutal-black px-4 py-2 border-3 border-brutal-black rounded-lg shadow-brutal-sm">
       Skip to content
     </a>
     <Navbar currentPage={currentPage} />
-    <main id="main-content">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
     <Footer />
