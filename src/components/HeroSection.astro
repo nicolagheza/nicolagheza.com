@@ -18,13 +18,13 @@ const colorMap = {
   <div class="absolute w-9 h-9 bg-brutal-yellow border-3 border-brutal-black rounded-full shadow-brutal-sm top-[60%] left-[3%] animate-[float_4s_ease-in-out_infinite_1.5s] hidden md:block" aria-hidden="true"></div>
 
   <div class="max-w-3xl text-center relative z-10">
-    <h1 class="font-heading font-extrabold text-[clamp(3rem,8vw,6rem)] leading-none mb-2 animate-[bounceIn_0.8s_cubic-bezier(0.34,1.56,0.64,1)_both]">
+    <h1 class="font-heading font-extrabold text-[clamp(3rem,8vw,6rem)] leading-none mb-6 animate-[bounceIn_0.8s_cubic-bezier(0.34,1.56,0.64,1)_both]">
       <span class="bg-brutal-yellow px-[0.3em] py-[0.1em] border-4 border-brutal-black rounded-xl shadow-brutal-lg inline-block -rotate-2 hover:rotate-1 hover:scale-[1.03] transition-transform duration-400 ease-bounce">
         {homepage.heading}
       </span>
     </h1>
 
-    <div class="font-heading font-bold text-[clamp(1rem,2.5vw,1.5rem)] mt-6 mb-0 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.3s_both]">
+    <div class="font-heading font-bold text-[clamp(1rem,2.5vw,1.5rem)] mt-8 mb-0 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.3s_both]">
       {homepage.subtitles.map((sub) => (
         <span class:list={[
           "inline-block px-[0.8em] py-[0.3em] border-3 border-brutal-black rounded-lg shadow-brutal-sm m-1 hover:-translate-y-1 hover:rotate-2 hover:shadow-brutal-md transition-all duration-300 ease-bounce",
@@ -35,11 +35,11 @@ const colorMap = {
       ))}
     </div>
 
-    <p class="font-heading font-semibold text-[clamp(0.9rem,2vw,1.1rem)] mt-3 tracking-wide uppercase text-brutal-black/70 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.4s_both]">
+    <p class="font-heading font-semibold text-[clamp(0.9rem,2vw,1.1rem)] mt-6 tracking-wide uppercase text-brutal-black/70 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.4s_both]">
       {homepage.tagline}
     </p>
 
-    <p class="text-lg leading-relaxed max-w-xl mx-auto mt-2 mb-8 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.5s_both]" set:html={homepage.bio} />
+    <p class="text-lg leading-relaxed max-w-xl mx-auto mt-4 mb-8 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.5s_both]" set:html={homepage.bio} />
 
     <div class="flex gap-4 justify-center flex-wrap mt-10 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.7s_both]">
       {homepage.links.map((link) => (

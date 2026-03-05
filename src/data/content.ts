@@ -288,6 +288,11 @@ export const services = {
   },
 };
 
+export const customers = [
+  { name: "Customer A", logo: "/logos/customer-a.svg" },
+  { name: "Customer B", logo: "/logos/customer-b.svg" },
+];
+
 export const projects = [
   {
     title: "Crowbuddy",
