@@ -167,39 +167,39 @@ export const about = {
 
 export const services = {
   intro:
-    "Leveraging expertise in AI, data science, and robust backend engineering, I offer specialized services to help businesses leverage technology for improved efficiency, insights, and automation.",
+    "Leveraging expertise in software engineering, AI, and data, I offer specialized services to help businesses build reliable systems, gain insights, and automate workflows.",
   categories: [
     {
-      title: "Backend Engineering",
+      title: "Software Engineering",
       icon: "\u2699\uFE0F",
       color: "blue" as const,
       description:
-        "Building the foundational server-side logic, databases, and APIs that power your applications and data services.",
+        "Designing, building, and maintaining reliable software systems across the full stack — from frontend interfaces to backend services and infrastructure.",
       items: [
         {
-          name: "Custom API Development",
+          name: "Full-Stack Development",
           description:
-            "Design and implement robust and scalable APIs to connect your front-end applications with backend services and data.",
+            "Build end-to-end applications with modern frontend frameworks and robust backend services, delivering seamless user experiences.",
         },
         {
-          name: "Database Design & Management",
+          name: "API Design & Development",
           description:
-            "Create, optimize, and manage databases to store and retrieve data efficiently for your applications and AI models.",
+            "Design and implement scalable RESTful and GraphQL APIs that connect services, clients, and data sources.",
         },
         {
-          name: "Server-Side Logic",
+          name: "Cloud Infrastructure & DevOps",
           description:
-            "Develop the core business logic and processes that run on the server, ensuring performance and reliability.",
+            "Set up CI/CD pipelines, containerized deployments, and cloud infrastructure for reliable and automated delivery.",
         },
         {
-          name: "System Integration",
+          name: "System Architecture",
           description:
-            "Connect disparate systems and services to enable seamless data flow and functionality.",
+            "Design scalable, maintainable architectures that handle growing complexity, data volumes, and user traffic.",
         },
         {
-          name: "Scalable Architecture",
+          name: "Testing & Quality Assurance",
           description:
-            "Design and build backend systems that can handle increasing amounts of data and user traffic.",
+            "Implement testing strategies including unit, integration, and end-to-end tests to ensure software reliability.",
         },
       ],
     },
@@ -210,6 +210,11 @@ export const services = {
       description:
         "Solutions to help you leverage your visual data and automatically analyze video or image streams.",
       items: [
+        {
+          name: "Document Processing & OCR",
+          description:
+            "Extract text and structured data from scanned documents, forms, and PDFs with high accuracy.",
+        },
         {
           name: "Media Asset Retrieval",
           description:
@@ -233,49 +238,60 @@ export const services = {
       ],
     },
     {
-      title: "General Purpose AI",
+      title: "AI & Automation",
       icon: "\uD83E\uDD16",
       color: "green" as const,
       description:
         "AI-powered tools and agents tailored to your business needs.",
       items: [
         {
-          name: "Knowledge Base Building",
+          name: "Knowledge Base Agents",
           description:
             "Custom ChatGPT-like agents that know your company inside out. Leverage all company documents, integrate with your systems, deploy in a secure cloud.",
         },
         {
-          name: "Accounting Tools",
+          name: "AI Workflow Automation",
           description:
-            "Process paper invoices and receipts from different suppliers, extracting relevant information and automatically categorizing by expense category.",
+            "Automate repetitive business processes with LLM-powered pipelines that handle tasks end-to-end with minimal human intervention.",
+        },
+        {
+          name: "Document Intelligence",
+          description:
+            "Extract structured information from invoices, receipts, contracts, and forms — automatically categorized and ready for downstream systems.",
+        },
+        {
+          name: "Data Extraction & Summarization",
+          description:
+            "Pull structured insights from unstructured text such as emails, reports, and contracts using large language models.",
+        },
+        {
+          name: "Conversational Assistants",
+          description:
+            "Build customer-facing chat agents for support, onboarding, and internal workflows — deployed on web, messaging platforms, or voice.",
         },
       ],
     },
     {
-      title: "Miscellaneous Data Services",
+      title: "Data Engineering & Analytics",
       icon: "\uD83D\uDCCA",
       color: "yellow" as const,
-      description: "Data tools and services for operational insights.",
+      description:
+        "Data pipelines, analytics, and tooling for operational insights.",
       items: [
+        {
+          name: "ETL & Data Pipelines",
+          description:
+            "Build automated data ingestion, transformation, and loading pipelines to keep your systems fed with clean, reliable data.",
+        },
         {
           name: "Data Visualization Dashboards",
           description:
             "Build dashboards to collect and visualize static or live data for a clearer overview of your operations.",
         },
         {
-          name: "Legacy Software Maintenance",
-          description:
-            "Maintain, fix, or upgrade your AI or data-based systems to improve performance, reduce costs, or implement new features.",
-        },
-        {
           name: "Data Scraping",
           description:
             "Build tools to automatically collect data from webpages, clean it, and store it in databases or spreadsheets.",
-        },
-        {
-          name: "Routing Tools",
-          description:
-            "Optimize delivery routes to save time, fuel, and money for businesses that fulfill a large number of deliveries daily.",
         },
       ],
     },
