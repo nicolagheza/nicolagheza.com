@@ -19,7 +19,7 @@ export const homepage = {
     { text: "Artificial Intelligence", color: "green" as const },
   ],
   tagline: "AI Engineer | BSc Data Science & AI (Maastricht University)",
-  bio: "Driven by curiosity and technical precision, I build at the intersection of scalable backend architecture and artificial intelligence. From designing high-performance APIs to deploying ML/DL and Generative AI workflows, I specialize in engineering data-driven solutions that are as robust as they are intelligent. Based in the heart of Valle Camonica, Italy.",
+  bio: "Driven by curiosity and technical precision, I build at the intersection of software engineering and artificial intelligence. From designing scalable systems and APIs to building ML/DL and GenAI solutions, I specialize in engineering data-driven systems that are as robust as they are intelligent. Based in Valle Camonica, Italy.",
   links: [
     {
       label: "Email Me",
