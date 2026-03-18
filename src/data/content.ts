@@ -332,18 +332,5 @@ export const projects = [
       },
       { label: "PDF", href: "/DeepFruit.pdf", external: false },
     ],
-  },
-  {
-    title: "Agora",
-    type: "Multi-Agent Simulation",
-    description: "A medieval village where AI agents live, work, trade, and talk — autonomously.",
-    color: "pink" as const,
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/nicolagheza/Agora",
-        external: true,
-      }
-    ],
   }
 ];
