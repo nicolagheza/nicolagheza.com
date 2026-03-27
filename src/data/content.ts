@@ -19,7 +19,7 @@ export const homepage = {
     { text: "Artificial Intelligence", color: "green" as const },
   ],
   tagline: "AI Engineer | BSc Data Science & AI (Maastricht University)",
-  bio: "Driven by curiosity and technical precision, I build at the intersection of software engineering and artificial intelligence. From designing scalable systems and APIs to building ML/DL and GenAI solutions, I specialize in engineering data-driven systems that are as robust as they are intelligent. Based in Valle Camonica, Italy.",
+  bio: "I help businesses build intelligent software — from AI-powered applications and computer vision systems to scalable backends and data pipelines. Whether you need a custom ML model, a RAG-powered knowledge base, or a reliable API, I engineer solutions that work in production. Based in Valle Camonica, Italy.",
   links: [
     {
       label: "Email Me",
@@ -40,75 +40,72 @@ export const homepage = {
     },
   ],
   marqueeItems: [
-    "SOFTWARE ENGINEERING",
-    "DEEP LEARNING",
-    "DATA SCIENCE",
-    "ARTIFICIAL INTELLIGENCE",
-    "BACKEND DEVELOPMENT",
-    "COMPUTER VISION",
-    "CLOUD INFRASTRUCTURE",
     "MACHINE LEARNING",
+    "SOFTWARE ENGINEERING",
+    "COMPUTER VISION",
+    "DATA ENGINEERING",
+    "RAG & LLMs",
+    "BACKEND DEVELOPMENT",
   ],
 };
 
 export const about = {
   bio: [
-    "I'm Nicola, an Italian <strong>AI Engineer</strong> with a BSc in <strong>Data Science & AI</strong> from Maastricht University.",
-    "I specialize in the intersection of <strong>Software Engineering</strong> and <strong>ML/DL/GenAI</strong>, focusing on building scalable, production-grade systems.",
-    "My expertise lies in bridging the gap between <strong>advanced model architecture</strong> and <strong>robust backend infrastructure</strong> to solve complex, real-world problems.",
+    "I'm Nicola, an Italian <strong>AI Engineer</strong> and freelance consultant running <strong>nicode.</strong> since 2019. I hold a BSc in <strong>Data Science & AI</strong> from Maastricht University and have 8+ years of experience across AI/ML engineering and backend development.",
+    "I work with businesses to build <strong>AI-powered applications</strong>, <strong>computer vision systems</strong>, and <strong>scalable backend infrastructure</strong> — turning complex technical challenges into reliable, production-grade solutions.",
   ],
   focusAreas: [
     {
-      title: "Model Engineering & Training",
+      title: "AI & Machine Learning",
       color: "blue" as const,
       focus:
-        "Architecting and optimizing high-performance ML/DL models across diverse domains.",
+        "Building intelligent systems with foundation models, custom ML pipelines, and RAG architectures.",
       details: [
-        "Domain-specific Fine-Tuning (NLP, CV, Audio)",
-        "Hyperparameter Optimization (HPO)",
-        "Model Compression (Quantization/Pruning)",
+        "LLM Applications & RAG",
+        "Model Fine-Tuning",
+        "Agentic Workflows",
       ],
       impact:
-        "Moving beyond generic APIs to craft specialized, efficient models that balance accuracy with computational constraints.",
+        "From energy prediction models to digital twin chatbots, turning AI research into production systems that solve real business problems.",
     },
     {
-      title: "AI Orchestration & MLOps",
+      title: "Software Engineering",
       color: "pink" as const,
       focus:
-        "Bridging the gap between experimental notebooks and reliable production environments.",
+        "Designing scalable backend systems, APIs, and infrastructure that power modern applications.",
       details: [
-        "Agentic Workflows",
-        "CI/CD for Machine Learning",
-        "Evaluation Frameworks & AI Guardrails",
+        "REST & GraphQL APIs",
+        "System Architecture",
+        "Cloud & DevOps",
       ],
       impact:
-        "Ensuring AI systems remain robust, observable, and self-healing while maintaining high reliability in the wild.",
+        "Years of building payment integrations, queue systems, and high-throughput backends across travel, blockchain, and AI platforms.",
     },
     {
-      title: "High-Performance AI Backend",
+      title: "Computer Vision",
       color: "green" as const,
       focus:
-        "Building the industrial-strength infrastructure required to serve complex AI workloads.",
+        "Extracting actionable insights from images and video using deep learning.",
       details: [
-        "Distributed Systems",
-        "Vector Databases for RAG",
-        "Low-Latency API Design",
+        "Object Detection & Classification",
+        "Document Processing",
+        "Image Analysis",
       ],
       impact:
-        "Creating the scalable backbone necessary to handle non-deterministic AI tasks at enterprise scale with minimal latency.",
+        "From fine-tuning YOLO for waste detection to deep learning research on image recognition — building systems that see and understand visual data.",
     },
     {
-      title: "Data-Centric Engineering",
+      title: "Data Engineering",
       color: "yellow" as const,
       focus:
-        "Designing high-signal data foundations to fuel modern intelligence.",
+        "Building the pipelines and tooling that turn raw data into reliable, actionable inputs.",
       details: [
-        "Automated Data Labeling",
-        "Real-Time Stream Processing",
-        "Feature Store Architecture",
+        "ETL Pipelines",
+        "Data Processing",
+        "Analytics & Dashboards",
       ],
       impact:
-        "Streamlining the flow of raw data into high-quality, context-aware inputs that dictate the ultimate success of the model.",
+        "Designing data flows that keep systems fed with clean, structured data — from multi-source ingestion to analytics.",
     },
   ],
   experience: [
@@ -117,8 +114,10 @@ export const about = {
       role: "AI Engineer",
       company: "nicode.",
       location: "Remote",
-      dates: "Current",
+      dates: "December 2019 - Present",
       color: "blue" as const,
+      description:
+        "Key projects include ML models for home automation energy prediction, a YOLO-based computer vision solution for waste detection, and a RAG application as part of a digital twin solution for buildings.",
     },
     {
       number: 2,
@@ -128,6 +127,8 @@ export const about = {
       location: "Remote (IT)",
       dates: "March 2022 - March 2025",
       color: "pink" as const,
+      description:
+        "Built and maintained scalable backend systems across Sportit's portfolio of sports and travel platforms — REST & GraphQL APIs, payment provider integrations, background task processing, and a modular email pipeline.",
     },
     {
       number: 3,
@@ -136,6 +137,8 @@ export const about = {
       location: "Maastricht (NL)",
       dates: "August 2020 - October 2021",
       color: "green" as const,
+      description:
+        "Worked on backend architecture for a material certification platform that traces steel supply chain data on private Ethereum blockchain. Optimized performance for data-intensive operations and managed a team of junior developers.",
     },
     {
       number: 4,
@@ -145,6 +148,8 @@ export const about = {
       location: "Maastricht (NL)",
       dates: "February 2019 - August 2020",
       color: "yellow" as const,
+      description:
+        "Developed backend features for a conversational AI platform powering virtual assistants and chatbots for enterprise clients. Built REST APIs and ETL pipelines for multi-source data integration.",
     },
     {
       number: 5,
@@ -153,6 +158,8 @@ export const about = {
       location: "Heerlen (NL)",
       dates: "July 2018 - December 2018",
       color: "blue" as const,
+      description:
+        "Developed a blockchain-based informed consent system for medical research, automating consent management for clinical trials. Fullstack development across multiple modules.",
     },
     {
       number: 6,
@@ -161,6 +168,8 @@ export const about = {
       location: "Brighton (UK)",
       dates: "July 2017 - December 2017",
       color: "pink" as const,
+      description:
+        "Built NLP models to automatically generate multiple-choice and fill-in-the-blank questions from documents, served via Node.js backend services for an e-learning platform.",
     },
   ],
 };
