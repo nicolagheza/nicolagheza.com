@@ -7,37 +7,24 @@ interface Props {
   color: "blue" | "pink" | "green" | "yellow";
 }
 
-const { title, focus, details, impact, color } = Astro.props;
-
-const cardColors = {
-  blue: "bg-brutal-blue",
-  pink: "bg-brutal-pink",
-  green: "bg-brutal-green",
-  yellow: "bg-brutal-yellow",
-} as const;
-
-const textColor = color === "yellow" || color === "green" ? "text-brutal-black" : "text-white";
+const { title, focus, details, impact } = Astro.props;
 ---
 
-<div class:list={[
-  "border-4 border-brutal-black rounded-2xl shadow-brutal-md p-6 hover:-translate-y-1 hover:-rotate-[0.5deg] hover:shadow-brutal-lg transition-all duration-300 ease-bounce",
-  cardColors[color],
-  textColor,
-]}>
-  <h3 class="font-heading font-extrabold text-lg mb-3 inline-block px-3 py-1 border-2 border-brutal-black rounded-lg bg-white text-brutal-black shadow-[3px_3px_0_var(--color-brutal-black)]">
+<div class="group border border-border rounded-lg p-6 hover:border-accent/30 hover:bg-accent-light/30 transition-all duration-300">
+  <h3 class="font-semibold text-base mb-2 group-hover:text-accent transition-colors duration-200">
     {title}
   </h3>
-  <p class="text-sm font-bold leading-relaxed mb-3">
+  <p class="text-sm text-text-secondary leading-relaxed mb-4">
     {focus}
   </p>
-  <div class="flex flex-wrap gap-2 mb-3">
+  <div class="flex flex-wrap gap-2 mb-4">
     {details.map((tag) => (
-      <span class="bg-white text-brutal-black border-2 border-brutal-black rounded-full px-3 py-1 text-xs font-semibold">
+      <span class="text-xs font-medium text-text-muted bg-surface px-3 py-1 rounded-full">
         {tag}
       </span>
     ))}
   </div>
-  <p class="text-sm font-medium leading-relaxed">
+  <p class="text-sm text-text-secondary leading-relaxed">
     {impact}
   </p>
 </div>

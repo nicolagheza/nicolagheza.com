@@ -5,17 +5,17 @@ import { services } from "../data/content";
 ---
 
 <BaseLayout title="Services" currentPage="/services">
-  <div class="max-w-6xl mx-auto px-6 py-12">
+  <div class="max-w-5xl mx-auto px-6 py-16">
 
-    <h1 class="font-heading font-extrabold text-4xl inline-block px-5 py-2 bg-brutal-yellow text-brutal-black border-4 border-brutal-black rounded-xl shadow-brutal-md mb-6 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_both]">
-      Services
+    <h1 class="font-semibold text-4xl tracking-tight mb-4 animate-[fadeInUp_0.6s_var(--ease-smooth)_both]">
+      Services<span class="text-accent">.</span>
     </h1>
 
-    <p class="text-lg leading-relaxed max-w-3xl mb-10 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_0.2s_both]">
+    <p class="text-base text-text-secondary leading-relaxed max-w-2xl mb-12 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.1s_both]">
       {services.intro}
     </p>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
       {services.categories.map((cat, i) => (
         <div data-reveal data-reveal-delay={String(i + 1)}>
           <ServiceCard
@@ -29,14 +29,14 @@ import { services } from "../data/content";
       ))}
     </div>
 
-    <div class="bg-brutal-pink text-white border-4 border-brutal-black rounded-2xl shadow-brutal-lg p-12 text-center" data-reveal>
-      <h2 class="font-heading font-extrabold text-3xl mb-4">{services.cta.text}</h2>
-      <p class="text-lg opacity-90 mb-6">{services.cta.subtext}</p>
+    <div class="border border-border rounded-lg p-12 text-center" data-reveal>
+      <h2 class="font-semibold text-2xl tracking-tight mb-3">{services.cta.text}</h2>
+      <p class="text-base text-text-secondary mb-8">{services.cta.subtext}</p>
       <a
         href={services.cta.href}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block font-heading font-bold text-lg px-8 py-4 bg-brutal-yellow text-brutal-black border-4 border-brutal-black rounded-xl shadow-brutal-md hover:-translate-y-1 hover:scale-[1.03] hover:shadow-brutal-lg active:translate-y-0.5 active:shadow-brutal-sm transition-all duration-300 ease-bounce"
+        class="inline-flex items-center text-sm font-medium px-8 py-3 bg-accent text-white rounded-md hover:bg-accent-hover transition-colors duration-200"
       >
         {services.cta.label} &rarr;
       </a>

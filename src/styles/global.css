@@ -1,63 +1,45 @@
 @import "tailwindcss";
 
-/* Neo-Brutalism Theme */
+/* Clean Modern Theme — Inspired by agno.com */
 @theme {
-  --font-heading: "Syne", sans-serif;
-  --font-body: "Outfit", sans-serif;
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  --color-cream: #fef3e2;
-  --color-brutal-blue: #4361ee;
-  --color-brutal-pink: #f72585;
-  --color-brutal-yellow: #ffd60a;
-  --color-brutal-green: #80ed99;
-  --color-brutal-black: #1a1a1a;
+  --color-white: #ffffff;
+  --color-bg: #f6f7f9;
+  --color-surface: #f0f1f3;
+  --color-border: #d1d5db;
+  --color-border-subtle: #e5e7eb;
+  --color-text: #18181b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #71717a;
+  --color-accent: #ff4017;
+  --color-accent-hover: #e63610;
+  --color-accent-light: #fff5f2;
 
-  --shadow-brutal-sm: 4px 4px 0 #1a1a1a;
-  --shadow-brutal-md: 6px 6px 0 #1a1a1a;
-  --shadow-brutal-lg: 8px 8px 0 #1a1a1a;
-  --shadow-brutal-xl: 10px 10px 0 #1a1a1a;
-
-  --radius-brutal-sm: 8px;
-  --radius-brutal-md: 12px;
-  --radius-brutal-lg: 16px;
-
-  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes bounceIn {
-  0% { opacity: 0; transform: scale(0.3); }
-  50% { opacity: 1; transform: scale(1.08); }
-  70% { transform: scale(0.95); }
-  100% { transform: scale(1); }
-}
-
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-3deg); }
-  75% { transform: rotate(3deg); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-
-@keyframes popIn {
-  0% { opacity: 0; transform: scale(0) rotate(-10deg); }
-  60% { transform: scale(1.1) rotate(2deg); }
-  100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
 /* Base Styles */
@@ -67,11 +49,13 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-cream);
-  color: var(--color-brutal-black);
+  background-color: var(--color-white);
+  color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Reduced Motion */

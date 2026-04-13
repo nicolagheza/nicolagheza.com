@@ -6,23 +6,23 @@ import { about } from "../data/content";
 ---
 
 <BaseLayout title="About" currentPage="/about">
-  <div class="max-w-6xl mx-auto px-6 py-12">
+  <div class="max-w-5xl mx-auto px-6 py-16">
 
-    <h1 class="font-heading font-extrabold text-4xl inline-block px-5 py-2 bg-brutal-blue text-white border-4 border-brutal-black rounded-xl shadow-brutal-md mb-8 animate-[fadeInUp_0.6s_cubic-bezier(0.34,1.56,0.64,1)_both]">
-      About Me
+    <h1 class="font-semibold text-4xl tracking-tight mb-4 animate-[fadeInUp_0.6s_var(--ease-smooth)_both]">
+      About<span class="text-accent">.</span>
     </h1>
 
-    <div class="bg-white border-4 border-brutal-black rounded-2xl shadow-brutal-md p-8 mb-12 hover:-translate-y-1 hover:-rotate-[0.5deg] hover:shadow-brutal-lg transition-all duration-300 ease-bounce" data-reveal>
+    <div class="max-w-2xl mb-16 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.1s_both]">
       {about.bio.map((paragraph) => (
-        <p class="text-lg leading-relaxed mb-4 last:mb-0" set:html={paragraph} />
+        <p class="text-base text-text-secondary leading-relaxed mb-4 last:mb-0" set:html={paragraph} />
       ))}
     </div>
 
-    <h2 class="font-heading font-extrabold text-3xl inline-block px-5 py-2 bg-brutal-pink text-white border-4 border-brutal-black rounded-xl shadow-brutal-md mb-6" data-reveal>
+    <h2 class="font-semibold text-2xl tracking-tight mb-6" data-reveal>
       Focus Areas
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
       {about.focusAreas.map((area, i) => (
         <div data-reveal data-reveal-delay={String(i + 1)}>
           <FocusArea title={area.title} focus={area.focus} details={area.details} impact={area.impact} color={area.color} />
@@ -30,11 +30,11 @@ import { about } from "../data/content";
       ))}
     </div>
 
-    <h2 class="font-heading font-extrabold text-3xl inline-block px-5 py-2 bg-brutal-green text-brutal-black border-4 border-brutal-black rounded-xl shadow-brutal-md mb-6" data-reveal>
+    <h2 class="font-semibold text-2xl tracking-tight mb-6" data-reveal>
       Experience
     </h2>
 
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-3">
       {about.experience.map((exp, i) => (
         <div data-reveal data-reveal-delay={String(Math.min(i + 1, 6))}>
           <ExperienceItem

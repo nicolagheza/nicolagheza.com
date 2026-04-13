@@ -10,29 +10,17 @@ interface Props {
   color: "blue" | "pink" | "green" | "yellow";
 }
 
-const { number, role, company, details, description, location, dates, color } = Astro.props;
-
-const numberColors = {
-  blue: "bg-brutal-blue text-white",
-  pink: "bg-brutal-pink text-white",
-  green: "bg-brutal-green text-brutal-black",
-  yellow: "bg-brutal-yellow text-brutal-black",
-} as const;
+const { role, company, details, description, location, dates } = Astro.props;
 ---
 
-<div class="bg-white border-4 border-brutal-black rounded-2xl shadow-brutal-md p-6 flex gap-6 items-start hover:-translate-y-1 hover:-rotate-[0.5deg] hover:shadow-brutal-lg transition-all duration-300 ease-bounce max-md:flex-col max-md:gap-3">
-  <div class:list={[
-    "font-heading font-extrabold text-2xl min-w-[50px] h-[50px] flex items-center justify-center border-3 border-brutal-black rounded-lg shadow-brutal-sm shrink-0",
-    numberColors[color],
-  ]}>
-    {number}
-  </div>
-  <div>
-    <h3 class="font-heading font-bold text-lg">
-      {role} <span class="text-brutal-blue">@ {company}</span>
-      {details && <span class="text-sm font-normal opacity-70"> [{details}]</span>}
+<div class="group border border-border rounded-lg p-6 hover:border-accent/30 transition-all duration-300">
+  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
+    <h3 class="font-semibold text-base">
+      {role} <span class="text-accent">@ {company}</span>
+      {details && <span class="text-sm font-normal text-text-muted"> ({details})</span>}
     </h3>
-    <p class="text-sm opacity-80 mt-1">{location} &mdash; {dates}</p>
-    {description && <p class="text-sm mt-2 leading-relaxed">{description}</p>}
+    <span class="text-xs font-medium text-text-muted whitespace-nowrap">{dates}</span>
   </div>
+  <p class="text-xs text-text-muted mb-3">{location}</p>
+  {description && <p class="text-sm text-text-secondary leading-relaxed">{description}</p>}
 </div>

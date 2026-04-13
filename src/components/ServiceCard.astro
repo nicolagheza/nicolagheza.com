@@ -12,31 +12,20 @@ interface Props {
   items: ServiceItem[];
 }
 
-const { title, icon, color, description, items } = Astro.props;
-
-const cardColors = {
-  blue: "bg-brutal-blue text-white",
-  pink: "bg-brutal-pink text-white",
-  green: "bg-brutal-green text-brutal-black",
-  yellow: "bg-brutal-yellow text-brutal-black",
-} as const;
+const { title, icon, description, items } = Astro.props;
 ---
 
-<div class:list={[
-  "border-4 border-brutal-black rounded-2xl shadow-brutal-md p-8 hover:-translate-y-1 hover:-rotate-[0.5deg] hover:shadow-brutal-lg transition-all duration-300 ease-bounce",
-  cardColors[color],
-]}>
-  <div class="font-heading font-extrabold text-xl mb-1 flex items-center gap-2">
-    <span class="text-3xl animate-[wiggle_2s_ease-in-out_infinite]">{icon}</span>
-    {title}
+<div class="group border border-border rounded-lg p-8 hover:border-accent/30 transition-all duration-300">
+  <div class="flex items-center gap-3 mb-2">
+    <span class="text-2xl">{icon}</span>
+    <h3 class="font-semibold text-lg group-hover:text-accent transition-colors duration-200">{title}</h3>
   </div>
-  <p class="text-sm opacity-90 mb-5">{description}</p>
-  <ul class="flex flex-col gap-2">
+  <p class="text-sm text-text-secondary mb-6">{description}</p>
+  <ul class="flex flex-col gap-4">
     {items.map((item) => (
-      <li class="relative pl-6 font-medium">
-        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 border-2 border-brutal-black rounded-sm bg-brutal-yellow" aria-hidden="true"></span>
-        <strong>{item.name}</strong>
-        <span class="block text-sm opacity-80 font-normal">{item.description}</span>
+      <li>
+        <strong class="text-sm font-medium text-text">{item.name}</strong>
+        <span class="block text-sm text-text-muted mt-0.5">{item.description}</span>
       </li>
     ))}
   </ul>

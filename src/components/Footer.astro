@@ -1,31 +1,42 @@
 ---
 const year = new Date().getFullYear();
 const links = [
-  { label: "Email", href: "mailto:nicode.solutions@gmail.com", color: "text-brutal-yellow" },
-  { label: "GitHub", href: "https://github.com/nicolagheza", color: "text-brutal-green" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nicola-gheza-9995bb116/", color: "text-brutal-blue" },
+  { label: "Email", href: "mailto:nicode.solutions@gmail.com" },
+  { label: "GitHub", href: "https://github.com/nicolagheza" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nicola-gheza-9995bb116/" },
 ];
 ---
 
-<footer class="bg-brutal-black text-white border-t-4 border-brutal-black mt-16">
-  <div class="max-w-6xl mx-auto px-6 py-8 text-center">
-    <p class="font-heading font-semibold text-sm">
-      Nicola Gheza &copy; {year} &mdash; Built with curiosity and a love for code.
-    </p>
-    <div class="flex gap-4 justify-center mt-4">
-      {links.map((link) => (
-        <a
-          href={link.href}
-          target={link.href.startsWith("mailto") ? undefined : "_blank"}
-          rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-          class:list={[
-            "font-semibold px-2 py-1 rounded-lg transition-all duration-300 ease-bounce hover:bg-white/10 hover:-translate-y-0.5",
-            link.color,
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
+<footer class="border-t border-border mt-24">
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <div>
+        <p class="font-semibold text-lg tracking-tight text-text">
+          NICODE<span class="text-accent">.</span> <span class="font-normal text-sm text-text-muted">di Gheza Nicola</span>
+        </p>
+        <p class="text-sm text-text-muted mt-1">
+          P.IVA: 04680240985
+        </p>
+      </div>
+
+      <div class="flex gap-6">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            target={link.href.startsWith("mailto") ? undefined : "_blank"}
+            rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+            class="text-sm text-text-secondary hover:text-accent transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="border-t border-border-subtle mt-8 pt-8">
+      <p class="text-xs text-text-muted">
+        &copy; {year} NICODE di Gheza Nicola. All rights reserved.
+      </p>
     </div>
   </div>
 </footer>
