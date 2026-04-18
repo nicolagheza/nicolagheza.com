@@ -10,12 +10,34 @@ interface Props {
   color: "blue" | "pink" | "green" | "yellow";
 }
 
-const { number, role, company, details, description, location, dates } = Astro.props;
-const padded = String(number).padStart(2, "0");
+const { role, company, details, description, location, dates } = Astro.props;
+
+const MONTH_ABBR: Record<string, string> = {
+  january: "Jan", february: "Feb", march: "Mar", april: "Apr",
+  may: "May", june: "Jun", july: "Jul", august: "Aug",
+  september: "Sep", october: "Oct", november: "Nov", december: "Dec",
+};
+const formatMonthYear = (raw: string) => {
+  const s = raw.trim();
+  if (!s) return "";
+  if (/present|now/i.test(s)) return "Present";
+  const m = s.match(/^([A-Za-z]+)\s+(\d{4})$/);
+  if (m) {
+    const mon = MONTH_ABBR[m[1].toLowerCase()] ?? m[1];
+    return `${mon} ${m[2]}`;
+  }
+  return s;
+};
+const [startRaw, endRaw] = dates.split(/\s*[-–]\s*/);
+const startLabel = formatMonthYear(startRaw ?? "");
+const endLabel = formatMonthYear(endRaw ?? "");
+const dateLabel = startLabel === endLabel ? startLabel : `${startLabel} → ${endLabel}`;
 ---
 
-<div class="group border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 md:p-8 grid grid-cols-[auto_1fr] gap-6 items-start hover:border-[color:var(--color-accent)]/60 transition-colors">
-  <span class="font-[var(--font-mono)] text-xs text-[color:var(--color-accent)] pt-1">{padded}</span>
+<div class="group border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 md:p-8 grid grid-cols-1 md:grid-cols-[11rem_1fr] gap-4 md:gap-8 items-start hover:border-[color:var(--color-accent)]/60 transition-colors">
+  <div class="font-[var(--font-mono)] md:pt-1">
+    <div class="text-sm text-[color:var(--color-accent)] tracking-tight">{dateLabel}</div>
+  </div>
 
   <div>
     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
@@ -23,9 +45,10 @@ const padded = String(number).padStart(2, "0");
         {role} <span class="text-[color:var(--color-accent)]">@ {company}</span>
         {details && <span class="text-sm font-normal text-[color:var(--color-text-muted)]"> ({details})</span>}
       </h3>
-      <span class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] whitespace-nowrap">{dates}</span>
     </div>
-    <p class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] mb-3 uppercase tracking-[0.08em]">{location}</p>
+    <p class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] mb-3 uppercase tracking-[0.08em]">
+      {location}
+    </p>
     {description && <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed">{description}</p>}
   </div>
 </div>

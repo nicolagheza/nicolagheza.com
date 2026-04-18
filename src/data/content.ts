@@ -23,7 +23,7 @@ export const homepage = {
   links: [
     {
       label: "Email Me",
-      href: "mailto:nicode.solutions@gmail.com",
+      href: "mailto:nicola@nicode.solutions",
       color: "pink" as const,
     },
     {
