@@ -15,17 +15,26 @@ interface Props {
 const { title, icon, description, items } = Astro.props;
 ---
 
-<div class="group border border-border rounded-lg p-8 hover:border-accent/30 transition-all duration-300">
-  <div class="flex items-center gap-3 mb-2">
+<div class="corner-frame relative group p-8 bg-[color:var(--color-surface)] h-full transition-colors hover:bg-[color:var(--color-accent-soft)]">
+  <span class="corner-frame__bl"></span>
+  <span class="corner-frame__br"></span>
+
+  <div class="flex items-center gap-3 mb-3">
     <span class="text-2xl">{icon}</span>
-    <h3 class="font-semibold text-lg group-hover:text-accent transition-colors duration-200">{title}</h3>
+    <h3 class="font-[var(--font-mono)] font-semibold text-xl tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
+      {title}
+    </h3>
   </div>
-  <p class="text-sm text-text-secondary mb-6">{description}</p>
-  <ul class="flex flex-col gap-4">
+  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed mb-6">{description}</p>
+
+  <ul class="flex flex-col gap-5 border-t border-[color:var(--color-border)] pt-5">
     {items.map((item) => (
       <li>
-        <strong class="text-sm font-medium text-text">{item.name}</strong>
-        <span class="block text-sm text-text-muted mt-0.5">{item.description}</span>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-[color:var(--color-accent)]"></span>
+          <strong class="font-[var(--font-mono)] text-sm font-medium text-[color:var(--color-text)]">{item.name}</strong>
+        </div>
+        <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed pl-3.5">{item.description}</p>
       </li>
     ))}
   </ul>

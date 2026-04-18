@@ -2,42 +2,42 @@
 import { homepage } from "../data/content";
 ---
 
-<section class="min-h-[calc(100vh-65px)] flex items-center justify-center px-6 py-20">
-  <div class="max-w-3xl text-center">
-    <h1 class="font-semibold text-[clamp(2.5rem,7vw,4.5rem)] leading-[1.1] tracking-tight mb-6 animate-[fadeInUp_0.6s_var(--ease-smooth)_both]">
-      <span id="hero-name">{homepage.heading}</span><span class="text-accent animate-[blink_1s_ease-in-out_infinite]">_</span>
-    </h1>
+<section class="relative grid-bg border-b border-[color:var(--color-border)]">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <div class="max-w-3xl">
+      <div class="eyebrow mb-6 text-[color:var(--color-text-secondary)]">
+        <span class="text-[color:var(--color-accent)]">_</span> {homepage.tagline}
+      </div>
 
-    <div class="flex flex-wrap justify-center gap-3 mt-6 mb-8 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.15s_both]">
-      {homepage.subtitles.map((sub) => (
-        <span class="text-sm font-medium px-4 py-1.5 rounded-full border border-border text-text-secondary hover:border-accent hover:text-accent transition-colors duration-200">
-          {sub.text}
-        </span>
-      ))}
-    </div>
+      <h1 class="font-[var(--font-display)] font-semibold tracking-[-0.02em] text-[clamp(2.5rem,7vw,5rem)] leading-[1.02] text-[color:var(--color-text)]">
+        <span id="hero-name">{homepage.heading}</span><span class="cursor-u">_</span>
+      </h1>
 
-    <p class="text-sm font-medium uppercase tracking-[0.2em] text-text-muted mt-6 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.25s_both]">
-      {homepage.tagline}
-    </p>
+      <div class="flex flex-wrap gap-2 mt-8">
+        {homepage.subtitles.map((sub) => (
+          <span class="font-[var(--font-mono)] text-xs uppercase tracking-[0.08em] bracket-label text-[color:var(--color-text-secondary)] py-1.5">
+            {sub.text}
+          </span>
+        ))}
+      </div>
 
-    <p class="text-base text-text-secondary leading-relaxed max-w-xl mx-auto mt-6 mb-10 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.35s_both]" set:html={homepage.bio} />
+      <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] leading-relaxed max-w-2xl mt-8" set:html={homepage.bio} />
 
-    <div class="flex gap-3 justify-center flex-wrap mt-8 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.45s_both]">
-      {homepage.links.map((link, i) => (
-        <a
-          href={link.href}
-          target={link.external ? "_blank" : undefined}
-          rel={link.external ? "noopener noreferrer" : undefined}
-          class:list={[
-            "inline-flex items-center text-sm font-medium px-6 py-3 rounded-md transition-all duration-200",
-            i === 0
-              ? "bg-accent text-white hover:bg-accent-hover"
-              : "border border-border text-text hover:border-text hover:bg-surface",
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
+      <div class="flex flex-wrap gap-3 mt-10">
+        {homepage.links.map((link, i) => (
+          <a
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
+            class:list={[
+              "btn-plus",
+              i === 0 ? "btn-plus--primary" : i === 1 ? "btn-plus--dark" : "btn-plus--ghost",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </section>

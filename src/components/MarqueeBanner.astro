@@ -7,11 +7,11 @@ const { items } = Astro.props;
 const doubled = [...items, ...items];
 ---
 
-<div class="overflow-hidden border-y border-border py-3 whitespace-nowrap bg-bg">
+<div class="overflow-hidden border-b border-[color:var(--color-border)] py-4 whitespace-nowrap bg-[color:var(--color-surface)]">
   <div class="inline-flex animate-[marquee_25s_linear_infinite]">
     {doubled.map((item) => (
-      <span class="text-xs font-medium uppercase tracking-[0.2em] text-text-muted px-8 shrink-0">
-        {item} <span class="text-accent">/</span>
+      <span class="font-[var(--font-mono)] text-xs font-medium uppercase tracking-[0.12em] text-[color:var(--color-text-secondary)] px-8 shrink-0">
+        {item} <span class="text-[color:var(--color-accent)]">+</span>
       </span>
     ))}
   </div>

@@ -5,24 +5,33 @@ import { projects } from "../data/content";
 ---
 
 <BaseLayout title="Projects" currentPage="/projects">
-  <div class="max-w-5xl mx-auto px-6 py-16">
+  <section class="relative grid-bg border-b border-[color:var(--color-border)]">
+    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <div class="eyebrow mb-6 text-[color:var(--color-text-secondary)]">
+        <span class="text-[color:var(--color-accent)]">_</span> PROJECTS
+      </div>
 
-    <h1 class="font-semibold text-4xl tracking-tight mb-8 animate-[fadeInUp_0.6s_var(--ease-smooth)_both]">
-      Projects<span class="text-accent">.</span>
-    </h1>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      {projects.map((project, i) => (
-        <div data-reveal data-reveal-delay={String(i + 1)}>
-          <ProjectCard
-            title={project.title}
-            type={project.type}
-            description={project.description}
-            color={project.color}
-            links={project.links.map(l => ({ label: l.label, href: l.href, external: l.external }))}
-          />
-        </div>
-      ))}
+      <h1 class="font-[var(--font-display)] font-semibold text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em]">
+        Projects<span class="cursor-u">_</span>
+      </h1>
     </div>
-  </div>
+  </section>
+
+  <section class="bg-[color:var(--color-bg)]">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        {projects.map((project, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <ProjectCard
+              title={project.title}
+              type={project.type}
+              description={project.description}
+              color={project.color}
+              links={project.links.map(l => ({ label: l.label, href: l.href, external: l.external }))}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>

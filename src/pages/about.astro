@@ -6,49 +6,68 @@ import { about } from "../data/content";
 ---
 
 <BaseLayout title="About" currentPage="/about">
-  <div class="max-w-5xl mx-auto px-6 py-16">
+  <section class="relative grid-bg border-b border-[color:var(--color-border)]">
+    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <div class="eyebrow mb-6 text-[color:var(--color-text-secondary)]">
+        <span class="text-[color:var(--color-accent)]">_</span> ABOUT
+      </div>
 
-    <h1 class="font-semibold text-4xl tracking-tight mb-4 animate-[fadeInUp_0.6s_var(--ease-smooth)_both]">
-      About<span class="text-accent">.</span>
-    </h1>
+      <h1 class="font-[var(--font-display)] font-semibold text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em]">
+        About<span class="cursor-u">_</span>
+      </h1>
 
-    <div class="max-w-2xl mb-16 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.1s_both]">
-      {about.bio.map((paragraph) => (
-        <p class="text-base text-text-secondary leading-relaxed mb-4 last:mb-0" set:html={paragraph} />
-      ))}
+      <div class="max-w-2xl mt-8">
+        {about.bio.map((paragraph) => (
+          <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] leading-relaxed mb-4 last:mb-0" set:html={paragraph} />
+        ))}
+      </div>
     </div>
+  </section>
 
-    <h2 class="font-semibold text-2xl tracking-tight mb-6" data-reveal>
-      Focus Areas
-    </h2>
+  <section class="border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)]">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="mb-10" data-reveal>
+        <div class="eyebrow mb-3 text-[color:var(--color-text-secondary)]">/ WHAT I DO</div>
+        <h2 class="font-[var(--font-mono)] font-semibold text-2xl md:text-3xl tracking-tight">
+          Focus Areas<span class="cursor-u">_</span>
+        </h2>
+      </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
-      {about.focusAreas.map((area, i) => (
-        <div data-reveal data-reveal-delay={String(i + 1)}>
-          <FocusArea title={area.title} focus={area.focus} details={area.details} impact={area.impact} color={area.color} />
-        </div>
-      ))}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {about.focusAreas.map((area, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <FocusArea title={area.title} focus={area.focus} details={area.details} impact={area.impact} color={area.color} />
+          </div>
+        ))}
+      </div>
     </div>
+  </section>
 
-    <h2 class="font-semibold text-2xl tracking-tight mb-6" data-reveal>
-      Experience
-    </h2>
+  <section class="bg-[color:var(--color-bg)]">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="mb-10" data-reveal>
+        <div class="eyebrow mb-3 text-[color:var(--color-text-secondary)]">/ TIMELINE</div>
+        <h2 class="font-[var(--font-mono)] font-semibold text-2xl md:text-3xl tracking-tight">
+          Experience<span class="cursor-u">_</span>
+        </h2>
+      </div>
 
-    <div class="flex flex-col gap-3">
-      {about.experience.map((exp, i) => (
-        <div data-reveal data-reveal-delay={String(Math.min(i + 1, 6))}>
-          <ExperienceItem
-            number={exp.number}
-            role={exp.role}
-            company={exp.company}
-            details={exp.details}
-            description={exp.description}
-            location={exp.location}
-            dates={exp.dates}
-            color={exp.color}
-          />
-        </div>
-      ))}
+      <div class="flex flex-col gap-3">
+        {about.experience.map((exp, i) => (
+          <div data-reveal data-reveal-delay={String(Math.min(i + 1, 6))}>
+            <ExperienceItem
+              number={exp.number}
+              role={exp.role}
+              company={exp.company}
+              details={exp.details}
+              description={exp.description}
+              location={exp.location}
+              dates={exp.dates}
+              color={exp.color}
+            />
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
+  </section>
 </BaseLayout>

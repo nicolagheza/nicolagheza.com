@@ -1,60 +1,70 @@
 ---
 import { navigation } from "../data/content";
+import PlusButton from "./PlusButton.astro";
 
 interface Props {
   currentPage: string;
 }
-
 const { currentPage } = Astro.props;
 ---
 
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border">
-  <div class="max-w-5xl mx-auto flex items-center justify-center px-6 py-4">
-    <!-- Mobile hamburger -->
+<nav class="sticky top-0 z-50 bg-[color:var(--color-bg)]/85 backdrop-blur-md border-b border-[color:var(--color-border)]">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3.5">
+    <a href="/" class="flex items-center gap-0 font-[var(--font-mono)] font-semibold tracking-tight text-[color:var(--color-text)] text-base">
+      NICODE<span class="text-[color:var(--color-accent)]">_</span>
+    </a>
+
     <button
       id="nav-toggle"
-      class="md:hidden flex flex-col gap-1.5 p-2 rounded-md hover:bg-surface transition-colors duration-200"
+      class="md:hidden flex flex-col gap-1.5 p-2 rounded-md hover:bg-[color:var(--color-surface-2)] transition-colors"
       aria-label="Toggle navigation"
       aria-expanded="false"
     >
-      <span class="block w-5 h-[1.5px] bg-text rounded-full"></span>
-      <span class="block w-5 h-[1.5px] bg-text rounded-full"></span>
-      <span class="block w-5 h-[1.5px] bg-text rounded-full"></span>
+      <span class="block w-5 h-[1.5px] bg-[color:var(--color-text)] rounded-full"></span>
+      <span class="block w-5 h-[1.5px] bg-[color:var(--color-text)] rounded-full"></span>
+      <span class="block w-5 h-[1.5px] bg-[color:var(--color-text)] rounded-full"></span>
     </button>
 
-    <!-- Desktop links -->
     <div id="nav-links" class="hidden md:flex gap-1 items-center">
       {navigation.map((item) => (
         <a
           href={item.href}
           class:list={[
-            "text-sm font-medium px-4 py-2 rounded-md transition-colors duration-200",
+            "font-[var(--font-mono)] text-xs uppercase tracking-[0.08em] px-3 py-2 rounded-md transition-colors duration-200",
             currentPage === item.href
-              ? "text-accent bg-accent-light"
-              : "text-text-secondary hover:text-text hover:bg-surface",
+              ? "text-[color:var(--color-text)]"
+              : "text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-text)]",
           ]}
         >
           {item.label}
         </a>
       ))}
     </div>
+
+    <div class="hidden md:block">
+      <PlusButton href="mailto:nicode.solutions@gmail.com" variant="primary">
+        Email Me
+      </PlusButton>
+    </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-white px-4 pb-4">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)] px-4 pb-4">
     {navigation.map((item) => (
       <a
         href={item.href}
         class:list={[
-          "block text-sm font-medium text-center py-3 px-4 rounded-md transition-colors duration-200 mb-1",
+          "block font-[var(--font-mono)] text-xs uppercase tracking-[0.08em] text-center py-3 px-4 rounded-md transition-colors mb-1",
           currentPage === item.href
-            ? "text-accent bg-accent-light"
-            : "text-text-secondary hover:text-text hover:bg-surface",
+            ? "text-[color:var(--color-accent)] bg-[color:var(--color-accent-soft)]"
+            : "text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-text)] hover:bg-[color:var(--color-surface-2)]",
         ]}
       >
         {item.label}
       </a>
     ))}
+    <a href="mailto:nicode.solutions@gmail.com" class="btn-plus btn-plus--primary w-full justify-center mt-3">
+      Email Me
+    </a>
   </div>
 </nav>
 

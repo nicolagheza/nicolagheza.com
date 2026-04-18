@@ -10,17 +10,22 @@ interface Props {
   color: "blue" | "pink" | "green" | "yellow";
 }
 
-const { role, company, details, description, location, dates } = Astro.props;
+const { number, role, company, details, description, location, dates } = Astro.props;
+const padded = String(number).padStart(2, "0");
 ---
 
-<div class="group border border-border rounded-lg p-6 hover:border-accent/30 transition-all duration-300">
-  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
-    <h3 class="font-semibold text-base">
-      {role} <span class="text-accent">@ {company}</span>
-      {details && <span class="text-sm font-normal text-text-muted"> ({details})</span>}
-    </h3>
-    <span class="text-xs font-medium text-text-muted whitespace-nowrap">{dates}</span>
+<div class="group border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 md:p-8 grid grid-cols-[auto_1fr] gap-6 items-start hover:border-[color:var(--color-accent)]/60 transition-colors">
+  <span class="font-[var(--font-mono)] text-xs text-[color:var(--color-accent)] pt-1">{padded}</span>
+
+  <div>
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
+      <h3 class="font-[var(--font-mono)] font-semibold text-base md:text-lg tracking-tight">
+        {role} <span class="text-[color:var(--color-accent)]">@ {company}</span>
+        {details && <span class="text-sm font-normal text-[color:var(--color-text-muted)]"> ({details})</span>}
+      </h3>
+      <span class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] whitespace-nowrap">{dates}</span>
+    </div>
+    <p class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] mb-3 uppercase tracking-[0.08em]">{location}</p>
+    {description && <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed">{description}</p>}
   </div>
-  <p class="text-xs text-text-muted mb-3">{location}</p>
-  {description && <p class="text-sm text-text-secondary leading-relaxed">{description}</p>}
 </div>

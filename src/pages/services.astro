@@ -1,45 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import PlusButton from "../components/PlusButton.astro";
 import { services } from "../data/content";
 ---
 
 <BaseLayout title="Services" currentPage="/services">
-  <div class="max-w-5xl mx-auto px-6 py-16">
+  <section class="relative grid-bg border-b border-[color:var(--color-border)]">
+    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <div class="eyebrow mb-6 text-[color:var(--color-text-secondary)]">
+        <span class="text-[color:var(--color-accent)]">_</span> SERVICES
+      </div>
 
-    <h1 class="font-semibold text-4xl tracking-tight mb-4 animate-[fadeInUp_0.6s_var(--ease-smooth)_both]">
-      Services<span class="text-accent">.</span>
-    </h1>
+      <h1 class="font-[var(--font-display)] font-semibold text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em]">
+        Services<span class="cursor-u">_</span>
+      </h1>
 
-    <p class="text-base text-text-secondary leading-relaxed max-w-2xl mb-12 animate-[fadeInUp_0.6s_var(--ease-smooth)_0.1s_both]">
-      {services.intro}
-    </p>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
-      {services.categories.map((cat, i) => (
-        <div data-reveal data-reveal-delay={String(i + 1)}>
-          <ServiceCard
-            title={cat.title}
-            icon={cat.icon}
-            color={cat.color}
-            description={cat.description}
-            items={cat.items.map(item => ({ name: item.name, description: item.description }))}
-          />
-        </div>
-      ))}
+      <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] leading-relaxed max-w-2xl mt-8">
+        {services.intro}
+      </p>
     </div>
+  </section>
 
-    <div class="border border-border rounded-lg p-12 text-center" data-reveal>
-      <h2 class="font-semibold text-2xl tracking-tight mb-3">{services.cta.text}</h2>
-      <p class="text-base text-text-secondary mb-8">{services.cta.subtext}</p>
-      <a
-        href={services.cta.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center text-sm font-medium px-8 py-3 bg-accent text-white rounded-md hover:bg-accent-hover transition-colors duration-200"
-      >
-        {services.cta.label} &rarr;
-      </a>
+  <section class="border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)]">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        {services.categories.map((cat, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <ServiceCard
+              title={cat.title}
+              icon={cat.icon}
+              color={cat.color}
+              description={cat.description}
+              items={cat.items.map(item => ({ name: item.name, description: item.description }))}
+            />
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="bg-[color:var(--color-dark)] text-[color:var(--color-text-invert)] grid-bg grid-bg--dark">
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center" data-reveal>
+      <h2 class="font-[var(--font-display)] font-semibold text-3xl md:text-5xl tracking-tight text-white">
+        {services.cta.text}<span class="cursor-u">_</span>
+      </h2>
+      <p class="text-base text-[color:var(--color-text-invert)] mt-5 max-w-xl mx-auto">{services.cta.subtext}</p>
+      <div class="flex justify-center mt-10">
+        <PlusButton href={services.cta.href} variant="primary" external>
+          {services.cta.label}
+        </PlusButton>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

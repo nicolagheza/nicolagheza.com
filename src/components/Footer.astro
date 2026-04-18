@@ -1,40 +1,71 @@
 ---
+import { navigation } from "../data/content";
+
 const year = new Date().getFullYear();
-const links = [
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/nicolagheza", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nicola-gheza-9995bb116/", external: true },
   { label: "Email", href: "mailto:nicode.solutions@gmail.com" },
-  { label: "GitHub", href: "https://github.com/nicolagheza" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nicola-gheza-9995bb116/" },
 ];
 ---
 
-<footer class="border-t border-border mt-24">
-  <div class="max-w-5xl mx-auto px-6 py-12">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-      <div>
-        <p class="font-semibold text-lg tracking-tight text-text">
-          NICODE<span class="text-accent">.</span> <span class="font-normal text-sm text-text-muted">di Gheza Nicola</span>
-        </p>
-        <p class="text-sm text-text-muted mt-1">
-          P.IVA: 04680240985
-        </p>
+<footer class="bg-[color:var(--color-dark)] text-[color:var(--color-text-invert)] border-t border-[color:var(--color-border-dark)] mt-0">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="md:col-span-1">
+      <div class="font-[var(--font-mono)] font-semibold text-2xl text-white tracking-tight">
+        NICODE<span class="text-[color:var(--color-accent)]">_</span>
       </div>
-
-      <div class="flex gap-6">
-        {links.map((link) => (
-          <a
-            href={link.href}
-            target={link.href.startsWith("mailto") ? undefined : "_blank"}
-            rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-            class="text-sm text-text-secondary hover:text-accent transition-colors duration-200"
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
+      <p class="text-xs font-[var(--font-mono)] text-[color:var(--color-text-muted)] mt-3">
+        di Gheza Nicola
+      </p>
+      <p class="text-xs font-[var(--font-mono)] text-[color:var(--color-text-muted)] mt-1">
+        P.IVA 04680240985
+      </p>
     </div>
 
-    <div class="border-t border-border-subtle mt-8 pt-8">
-      <p class="text-xs text-text-muted">
+    <div>
+      <div class="eyebrow text-[color:var(--color-text-muted)] mb-4">PAGES</div>
+      <ul class="flex flex-col gap-2">
+        {navigation.map(l => (
+          <li>
+            <a href={l.href} class="text-sm text-[color:var(--color-text-invert)] hover:text-[color:var(--color-accent)] transition-colors">
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <div class="eyebrow text-[color:var(--color-text-muted)] mb-4">CONNECT</div>
+      <ul class="flex flex-col gap-2">
+        {socials.map(l => (
+          <li>
+            <a
+              href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+              class="text-sm text-[color:var(--color-text-invert)] hover:text-[color:var(--color-accent)] transition-colors"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <div class="eyebrow text-[color:var(--color-text-muted)] mb-4">CONTACT</div>
+      <a href="mailto:nicode.solutions@gmail.com" class="text-sm text-[color:var(--color-text-invert)] hover:text-[color:var(--color-accent)] transition-colors block">
+        nicode.solutions@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-[color:var(--color-border-dark)]">
+    <div class="max-w-6xl mx-auto px-6 py-6">
+      <p class="text-xs font-[var(--font-mono)] text-[color:var(--color-text-muted)]">
         &copy; {year} NICODE di Gheza Nicola. All rights reserved.
       </p>
     </div>

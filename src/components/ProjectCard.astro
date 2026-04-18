@@ -16,34 +16,33 @@ interface Props {
 const { title, type, description, links } = Astro.props;
 ---
 
-<div class="group border border-border rounded-lg overflow-hidden hover:border-accent/30 transition-all duration-300 flex flex-col">
-  <div class="px-8 py-6 border-b border-border">
-    <div class="flex items-center gap-3 mb-2">
-      <h2 class="font-semibold text-xl group-hover:text-accent transition-colors duration-200">{title}</h2>
-      <span class="text-xs font-medium text-text-muted bg-surface px-3 py-1 rounded-full whitespace-nowrap">
-        {type}
-      </span>
-    </div>
+<div class="corner-frame relative group p-8 bg-[color:var(--color-surface)] h-full flex flex-col transition-colors hover:bg-[color:var(--color-accent-soft)]">
+  <span class="corner-frame__bl"></span>
+  <span class="corner-frame__br"></span>
+
+  <div class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] uppercase tracking-[0.1em] mb-4 bracket-label">
+    {type}
   </div>
 
-  <div class="p-8 flex-1 flex flex-col">
-    <p class="text-sm text-text-secondary leading-relaxed mb-6 flex-1">{description}</p>
-    <div class="flex gap-3 flex-wrap">
-      {links.map((link, i) => (
-        <a
-          href={link.href}
-          target={link.external ? "_blank" : undefined}
-          rel={link.external ? "noopener noreferrer" : undefined}
-          class:list={[
-            "inline-flex items-center text-sm font-medium px-5 py-2 rounded-md transition-all duration-200",
-            i === 0
-              ? "bg-accent text-white hover:bg-accent-hover"
-              : "border border-border text-text hover:border-text",
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
-    </div>
+  <h2 class="font-[var(--font-mono)] font-semibold text-xl md:text-2xl tracking-tight mb-4 group-hover:text-[color:var(--color-accent)] transition-colors">
+    {title}
+  </h2>
+
+  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed mb-8 flex-1">{description}</p>
+
+  <div class="flex gap-3 flex-wrap">
+    {links.map((link, i) => (
+      <a
+        href={link.href}
+        target={link.external ? "_blank" : undefined}
+        rel={link.external ? "noopener noreferrer" : undefined}
+        class:list={[
+          "btn-plus",
+          i === 0 ? "btn-plus--primary" : "btn-plus--ghost",
+        ]}
+      >
+        {link.label}
+      </a>
+    ))}
   </div>
 </div>

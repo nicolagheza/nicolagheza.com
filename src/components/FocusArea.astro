@@ -10,21 +10,24 @@ interface Props {
 const { title, focus, details, impact } = Astro.props;
 ---
 
-<div class="group border border-border rounded-lg p-6 hover:border-accent/30 hover:bg-accent-light/30 transition-all duration-300">
-  <h3 class="font-semibold text-base mb-2 group-hover:text-accent transition-colors duration-200">
+<div class="corner-frame relative group p-8 bg-[color:var(--color-surface)] transition-colors hover:bg-[color:var(--color-accent-soft)]">
+  <span class="corner-frame__bl"></span>
+  <span class="corner-frame__br"></span>
+
+  <h3 class="font-[var(--font-mono)] font-semibold text-lg tracking-tight mb-3 group-hover:text-[color:var(--color-accent)] transition-colors">
     {title}
   </h3>
-  <p class="text-sm text-text-secondary leading-relaxed mb-4">
+  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed mb-5">
     {focus}
   </p>
-  <div class="flex flex-wrap gap-2 mb-4">
+  <div class="flex flex-wrap gap-2 mb-5">
     {details.map((tag) => (
-      <span class="text-xs font-medium text-text-muted bg-surface px-3 py-1 rounded-full">
+      <span class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-secondary)] bg-[color:var(--color-surface-2)] px-3 py-1 rounded-full bracket-label">
         {tag}
       </span>
     ))}
   </div>
-  <p class="text-sm text-text-secondary leading-relaxed">
+  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed">
     {impact}
   </p>
 </div>
