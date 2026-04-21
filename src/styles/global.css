@@ -260,8 +260,9 @@ body {
 }
 .hero__meta-dot {
   width: 6px; height: 6px; border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+  background: #3aa557;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #3aa557 22%, transparent);
+  animation: pulse 2s ease-in-out infinite;
 }
 .hero__meta-sep {
   width: 1px; height: 10px; background: var(--border);
@@ -354,7 +355,6 @@ body {
   padding: 28px 32px 32px;
   border: 1px solid var(--border-soft);
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -377,6 +377,7 @@ body {
 .tile::after  { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
 .tile > .corner-bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
 .tile > .corner-br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+.tile--right-only::before { display: none; }
 .tile:hover { border-color: var(--color, var(--accent)); }
 .tile--ai { --color: var(--c-ai); --color-bg: var(--c-ai-bg); }
 .tile--sw { --color: var(--c-sw); --color-bg: var(--c-sw-bg); }
@@ -654,16 +655,16 @@ body {
       color-mix(in srgb, var(--color) 8%, transparent) 14px 15px);
   opacity: 0.9;
 }
-.proj__visual-label {
+.proj__visual-mark {
   position: relative;
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(72px, 10vw, 128px);
+  line-height: 1;
+  letter-spacing: -0.04em;
   color: var(--color);
-  background: var(--surface);
-  padding: 4px 10px;
-  border: 1px solid color-mix(in srgb, var(--color) 25%, transparent);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  opacity: 0.5;
+  user-select: none;
 }
 .proj__body { padding: 32px; display: flex; flex-direction: column; }
 .proj__type {
@@ -877,7 +878,22 @@ body {
   padding: 72px 0 40px;
   border-bottom: 1px solid var(--border-soft);
   position: relative;
+  overflow: hidden;
 }
+.phead::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 30% 40%, #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 30% 40%, #000 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+.phead .wrap { position: relative; z-index: 1; }
 .phead__kicker {
   font-family: var(--font-mono);
   font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
@@ -923,11 +939,31 @@ body {
   grid-template-columns: 2fr 1fr;
   gap: 60px;
   align-items: start;
-  margin-top: 16px;
+  margin-top: 0;
 }
-.phead__split-right { padding-top: 12px; }
+.phead__split-right {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 @media (max-width: 900px) {
-  .phead__split { grid-template-columns: 1fr; gap: 24px; }
+  .phead__split { grid-template-columns: 1fr; gap: 28px; }
+  .phead__split-right { gap: 18px; padding-top: 0; }
+  .phead__split-right .status { align-self: flex-start; }
+}
+@media (max-width: 720px) {
+  .phead { padding: 56px 0 32px; }
+  .phead__lead { font-size: 16px; }
+  .phead__counter { margin-bottom: 20px; }
+  .meta-dl {
+    grid-template-columns: 80px 1fr;
+    column-gap: 16px;
+    font-size: 11px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .meta-dl dt, .meta-dl dd { padding: 10px 0; border-bottom-style: solid; }
+  .meta-dl dt { font-size: 9px; }
 }
 
 .meta-dl {
@@ -961,11 +997,14 @@ body {
 .status {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-mono);
-  font-size: 11px; color: var(--ink-soft);
-  padding: 6px 12px;
-  border: 1px solid var(--border);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 7px 14px;
+  border: 1px solid color-mix(in srgb, #3aa557 35%, var(--border));
   border-radius: 999px;
-  background: var(--surface);
+  background: color-mix(in srgb, #3aa557 8%, var(--surface));
 }
 .status__dot {
   width: 7px; height: 7px; border-radius: 999px; background: #3aa557;

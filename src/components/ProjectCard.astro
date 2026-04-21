@@ -21,7 +21,7 @@ const { tone, title, type, description, visual, links } = Astro.props;
 
 <article class={`proj proj--${tone}`}>
   <div class="proj__visual">
-    <span class="proj__visual-label">[ {visual} · placeholder ]</span>
+    <span class="proj__visual-mark">{visual.charAt(0)}</span>
   </div>
   <div class="proj__body">
     <div class="proj__type">{type}</div>

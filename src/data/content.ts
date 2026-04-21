@@ -61,7 +61,7 @@ export const homepage = {
 
 export const about = {
   bio: [
-    "I'm Nicola, an Italian <strong>AI Engineer</strong> and freelance consultant running <strong>nicode.</strong> since 2019. I hold a BSc in <strong>Data Science & AI</strong> from Maastricht University and have 8+ years of experience across AI/ML engineering and backend development.",
+    "I'm Nicola, an Italian <strong>AI Engineer</strong> and freelance consultant running <strong>nicode.</strong> since 2019. I hold a BSc in <strong>Data Science & AI</strong> from Maastricht University and have 9+ years of experience across AI/ML engineering and backend development.",
     "I work with businesses to build <strong>AI-powered applications</strong>, <strong>computer vision systems</strong>, and <strong>scalable backend infrastructure</strong> — turning complex technical challenges into reliable, production-grade solutions.",
   ],
   meta: [
@@ -70,7 +70,7 @@ export const about = {
     { k: "Works in", v: "Remote" },
     { k: "Focus", v: "AI · SWE · CV · Data" },
   ],
-  status: "Open for projects · Q2 2026",
+  status: "Open for projects",
   focusAreas: [
     {
       tone: "ai" as Tone,

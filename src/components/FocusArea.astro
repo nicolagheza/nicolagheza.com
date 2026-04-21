@@ -13,8 +13,7 @@ interface Props {
 const { tone, num, title, focus, details, impact } = Astro.props;
 ---
 
-<article class={`tile tile--${tone}`}>
-  <span class="corner-bl"></span>
+<article class={`tile tile--${tone} tile--right-only`}>
   <span class="corner-br"></span>
   <div class="focus">
     <div class="focus__rail">
