@@ -69,15 +69,9 @@ body {
 .grid-bg {
   position: relative;
   isolation: isolate;
-  background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--color-border) 55%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--color-border) 55%, transparent) 1px, transparent 1px);
-  background-size: 33.333% 100%, 100% 33.333%;
 }
 .grid-bg--dark {
-  background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--color-border-dark) 90%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--color-border-dark) 90%, transparent) 1px, transparent 1px);
+  background-image: none;
 }
 
 /* Corner bracket frame (feature tiles) */

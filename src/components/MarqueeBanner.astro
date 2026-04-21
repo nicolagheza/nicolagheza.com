@@ -8,11 +8,14 @@ const doubled = [...items, ...items];
 ---
 
 <div class="overflow-hidden border-b border-[color:var(--color-border)] py-4 whitespace-nowrap bg-[color:var(--color-surface)]">
-  <div class="inline-flex animate-[marquee_25s_linear_infinite]">
+  <div class="inline-flex items-center gap-8 animate-[marquee_25s_linear_infinite] pr-8">
     {doubled.map((item) => (
-      <span class="font-[var(--font-mono)] text-xs font-medium uppercase tracking-[0.12em] text-[color:var(--color-text-secondary)] px-8 shrink-0">
-        {item} <span class="text-[color:var(--color-accent)]">+</span>
-      </span>
+      <>
+        <span class="font-[var(--font-mono)] text-xs font-medium uppercase tracking-[0.12em] text-[color:var(--color-text-secondary)] shrink-0">
+          {item}
+        </span>
+        <span class="text-[color:var(--color-accent)] shrink-0" aria-hidden="true">+</span>
+      </>
     ))}
   </div>
 </div>
