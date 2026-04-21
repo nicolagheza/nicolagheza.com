@@ -1,41 +1,43 @@
 ---
+import type { Tone } from "../data/content";
+
 interface ServiceItem {
   name: string;
   description: string;
 }
 
 interface Props {
+  tone: Tone;
   title: string;
   icon: string;
-  color: "blue" | "pink" | "green" | "yellow";
   description: string;
   items: ServiceItem[];
 }
 
-const { title, icon, description, items } = Astro.props;
+const { tone, title, icon, description, items } = Astro.props;
 ---
 
-<div class="corner-frame relative group p-8 bg-[color:var(--color-surface)] h-full transition-colors hover:bg-[color:var(--color-accent-soft)]">
-  <span class="corner-frame__bl"></span>
-  <span class="corner-frame__br"></span>
-
-  <div class="flex items-center gap-3 mb-3">
-    <span class="text-2xl">{icon}</span>
-    <h3 class="font-[var(--font-mono)] font-semibold text-xl tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
-      {title}
-    </h3>
+<article class={`tile tile--${tone}`}>
+  <span class="corner-bl"></span>
+  <span class="corner-br"></span>
+  <div class="svc">
+    <div class="svc__head">
+      <div class="svc__icon">{icon}</div>
+      <div>
+        <h3 class="svc__title">{title}</h3>
+        <p class="svc__desc">{description}</p>
+      </div>
+    </div>
+    <ul class="svc__items">
+      {items.map((it, i) => (
+        <li class="svc__item">
+          <span class="svc__item-num">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h4 class="svc__item-name">{it.name}</h4>
+            <p class="svc__item-desc">{it.description}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
   </div>
-  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed mb-6">{description}</p>
-
-  <ul class="flex flex-col gap-5 border-t border-[color:var(--color-border)] pt-5">
-    {items.map((item) => (
-      <li>
-        <div class="flex items-center gap-2 mb-1">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-[color:var(--color-accent)]"></span>
-          <strong class="font-[var(--font-mono)] text-sm font-medium text-[color:var(--color-text)]">{item.name}</strong>
-        </div>
-        <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed pl-3.5">{item.description}</p>
-      </li>
-    ))}
-  </ul>
-</div>
+</article>

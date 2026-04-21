@@ -1,0 +1,25 @@
+---
+import type { Tone } from "../data/content";
+
+interface Props {
+  tone: Tone;
+  num: string;
+  title: string;
+  tags: string[];
+}
+
+const { tone, num, title, tags } = Astro.props;
+---
+
+<article class={`tile tile--${tone} capability`}>
+  <span class="corner-bl"></span>
+  <span class="corner-br"></span>
+  <div class="capability__head">
+    <span class="capability__num">{num}</span>
+    <a href="/services" class="capability__link">READ →</a>
+  </div>
+  <h3 class="capability__title">{title}</h3>
+  <div class="capability__tags">
+    {tags.map((t) => <span class="capability__tag">{t}</span>)}
+  </div>
+</article>

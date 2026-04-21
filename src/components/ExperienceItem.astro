@@ -1,16 +1,17 @@
 ---
+import type { Tone } from "../data/content";
+
 interface Props {
-  number: number;
+  tone: Tone;
   role: string;
   company: string;
   details?: string;
   description?: string;
   location: string;
   dates: string;
-  color: "blue" | "pink" | "green" | "yellow";
 }
 
-const { role, company, details, description, location, dates } = Astro.props;
+const { tone, role, company, details, description, location, dates } = Astro.props;
 
 const MONTH_ABBR: Record<string, string> = {
   january: "Jan", february: "Feb", march: "Mar", april: "Apr",
@@ -29,26 +30,21 @@ const formatMonthYear = (raw: string) => {
   return s;
 };
 const [startRaw, endRaw] = dates.split(/\s*[-–]\s*/);
-const startLabel = formatMonthYear(startRaw ?? "");
-const endLabel = formatMonthYear(endRaw ?? "");
-const dateLabel = startLabel === endLabel ? startLabel : `${startLabel} → ${endLabel}`;
+const from = formatMonthYear(startRaw ?? "");
+const to = formatMonthYear(endRaw ?? "");
 ---
 
-<div class="group border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 md:p-8 grid grid-cols-1 md:grid-cols-[11rem_1fr] gap-4 md:gap-8 items-start hover:border-[color:var(--color-accent)]/60 transition-colors">
-  <div class="font-[var(--font-mono)] md:pt-1">
-    <div class="text-sm text-[color:var(--color-accent)] tracking-tight">{dateLabel}</div>
-  </div>
-
+<div class={`xp xp--${tone}`}>
   <div>
-    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
-      <h3 class="font-[var(--font-mono)] font-semibold text-base md:text-lg tracking-tight">
-        {role} <span class="text-[color:var(--color-accent)]">@ {company}</span>
-        {details && <span class="text-sm font-normal text-[color:var(--color-text-muted)]"> ({details})</span>}
-      </h3>
-    </div>
-    <p class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] mb-3 uppercase tracking-[0.08em]">
-      {location}
-    </p>
-    {description && <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed">{description}</p>}
+    <h3 class="xp__role">
+      {role} <em>@ {company}</em>
+      {details && <span class="xp__role-extra">&nbsp;({details})</span>}
+    </h3>
+    <div class="xp__meta">{location}</div>
+    {description && <p class="xp__desc">{description}</p>}
+  </div>
+  <div class="xp__dates">
+    <span class="xp__dates-from">{from}</span>
+    <span class="xp__dates-to">→ {to}</span>
   </div>
 </div>

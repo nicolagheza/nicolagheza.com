@@ -6,64 +6,83 @@ import { about } from "../data/content";
 ---
 
 <BaseLayout title="About" currentPage="/about">
-  <section class="relative grid-bg border-b border-[color:var(--color-border)]">
-    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
-      <div class="eyebrow mb-6 text-[color:var(--color-text-secondary)]">
-        <span class="text-[color:var(--color-accent)]">_</span> ABOUT
+  <section class="phead">
+    <div class="wrap">
+      <div class="phead__kicker">_ About</div>
+      <h1 class="phead__title">About<span class="cursor"></span></h1>
+      <div class="phead__counter">
+        <b>01 · 03</b><br/>
+        Identity / Focus / Timeline
       </div>
-
-      <h1 class="font-[var(--font-display)] font-semibold text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em]">
-        About<span class="cursor-u">_</span>
-      </h1>
-
-      <div class="max-w-2xl mt-8">
-        {about.bio.map((paragraph) => (
-          <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] leading-relaxed mb-4 last:mb-0" set:html={paragraph} />
-        ))}
+      <div class="phead__split">
+        <div>
+          {about.bio.map((p) => (
+            <p class="phead__lead" set:html={p} />
+          ))}
+        </div>
+        <div class="phead__split-right">
+          <div class="status" style="margin-bottom: 20px;">
+            <span class="status__dot"></span>
+            {about.status}
+          </div>
+          <dl class="meta-dl">
+            {about.meta.map((m) => (
+              <>
+                <dt>{m.k}</dt>
+                <dd>{m.v}</dd>
+              </>
+            ))}
+          </dl>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)]">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="mb-10" data-reveal>
-        <div class="eyebrow mb-3 text-[color:var(--color-text-secondary)]">/ WHAT I DO</div>
-        <h2 class="font-[var(--font-mono)] font-semibold text-2xl md:text-3xl tracking-tight">
-          Focus Areas<span class="cursor-u">_</span>
-        </h2>
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <div class="eyebrow">/ what I do</div>
+          <h2 class="section__title">Focus Areas<span class="cursor"></span></h2>
+        </div>
+        <p class="section__intro">
+          Four disciplines, color-coded across the site. Experience entries and project tags below
+          inherit the same palette.
+        </p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {about.focusAreas.map((area, i) => (
+      <div class="grid-2">
+        {about.focusAreas.map((f, i) => (
           <div data-reveal data-reveal-delay={String(i + 1)}>
-            <FocusArea title={area.title} focus={area.focus} details={area.details} impact={area.impact} color={area.color} />
+            <FocusArea tone={f.tone} num={f.num} title={f.title} focus={f.focus} details={f.details} impact={f.impact} />
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="bg-[color:var(--color-bg)]">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="mb-10" data-reveal>
-        <div class="eyebrow mb-3 text-[color:var(--color-text-secondary)]">/ TIMELINE</div>
-        <h2 class="font-[var(--font-mono)] font-semibold text-2xl md:text-3xl tracking-tight">
-          Experience<span class="cursor-u">_</span>
-        </h2>
+  <section class="section section--no-border">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <div class="eyebrow">/ timeline</div>
+          <h2 class="section__title">Experience<span class="cursor"></span></h2>
+        </div>
+        <p class="section__intro">
+          Six roles, 2017 → present — shipping at the intersection of AI, backend, and data.
+        </p>
       </div>
 
-      <div class="flex flex-col gap-3">
-        {about.experience.map((exp, i) => (
+      <div class="timeline">
+        {about.experience.map((x, i) => (
           <div data-reveal data-reveal-delay={String(Math.min(i + 1, 6))}>
             <ExperienceItem
-              number={exp.number}
-              role={exp.role}
-              company={exp.company}
-              details={exp.details}
-              description={exp.description}
-              location={exp.location}
-              dates={exp.dates}
-              color={exp.color}
+              tone={x.tone}
+              role={x.role}
+              company={x.company}
+              details={x.details}
+              description={x.description}
+              location={x.location}
+              dates={x.dates}
             />
           </div>
         ))}

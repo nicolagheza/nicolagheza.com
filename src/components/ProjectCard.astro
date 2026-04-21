@@ -1,4 +1,6 @@
 ---
+import type { Tone } from "../data/content";
+
 interface ProjectLink {
   label: string;
   href: string;
@@ -6,43 +8,34 @@ interface ProjectLink {
 }
 
 interface Props {
+  tone: Tone;
   title: string;
   type: string;
   description: string;
-  color: "blue" | "pink" | "green" | "yellow";
+  visual: string;
   links: ProjectLink[];
 }
 
-const { title, type, description, links } = Astro.props;
+const { tone, title, type, description, visual, links } = Astro.props;
 ---
 
-<div class="corner-frame relative group p-8 bg-[color:var(--color-surface)] h-full flex flex-col transition-colors hover:bg-[color:var(--color-accent-soft)]">
-  <span class="corner-frame__bl"></span>
-  <span class="corner-frame__br"></span>
-
-  <div class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-muted)] uppercase tracking-[0.1em] mb-4 bracket-label">
-    {type}
+<article class={`proj proj--${tone}`}>
+  <div class="proj__visual">
+    <span class="proj__visual-label">[ {visual} · placeholder ]</span>
   </div>
-
-  <h2 class="font-[var(--font-mono)] font-semibold text-xl md:text-2xl tracking-tight mb-4 group-hover:text-[color:var(--color-accent)] transition-colors">
-    {title}
-  </h2>
-
-  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed mb-8 flex-1">{description}</p>
-
-  <div class="flex gap-3 flex-wrap">
-    {links.map((link, i) => (
-      <a
-        href={link.href}
-        target={link.external ? "_blank" : undefined}
-        rel={link.external ? "noopener noreferrer" : undefined}
-        class:list={[
-          "btn-plus",
-          i === 0 ? "btn-plus--primary" : "btn-plus--ghost",
-        ]}
-      >
-        {link.label}
-      </a>
-    ))}
+  <div class="proj__body">
+    <div class="proj__type">{type}</div>
+    <h2 class="proj__title">{title}</h2>
+    <p class="proj__desc">{description}</p>
+    <div class="proj__links">
+      {links.map((l, i) => (
+        <a
+          href={l.href}
+          target={l.external ? "_blank" : undefined}
+          rel={l.external ? "noopener noreferrer" : undefined}
+          class={`btn ${i === 0 ? "btn--primary" : "btn--ghost"} btn--sm`}
+        >{l.label}</a>
+      ))}
+    </div>
   </div>
-</div>
+</article>

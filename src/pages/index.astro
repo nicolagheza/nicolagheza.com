@@ -2,10 +2,32 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MarqueeBanner from "../components/MarqueeBanner.astro";
 import HeroSection from "../components/HeroSection.astro";
+import CapabilityTile from "../components/CapabilityTile.astro";
 import { homepage } from "../data/content";
 ---
 
 <BaseLayout currentPage="/">
   <MarqueeBanner items={homepage.marqueeItems} />
   <HeroSection />
+
+  <section class="section" style="padding-top: 48px;">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <div class="eyebrow">/ services</div>
+          <h2 class="section__title">What I can do for you.</h2>
+        </div>
+        <p class="section__intro">
+          Four practice areas — from shipping software to training models — that combine on most engagements.
+        </p>
+      </div>
+      <div class="grid-2">
+        {homepage.services.map((svc, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <CapabilityTile tone={svc.tone} num={svc.num} title={svc.title} tags={svc.tags} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>

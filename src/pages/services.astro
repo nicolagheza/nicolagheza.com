@@ -1,38 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-import PlusButton from "../components/PlusButton.astro";
 import { services } from "../data/content";
+
+const deliverableCount = services.categories.reduce((sum, c) => sum + c.items.length, 0);
 ---
 
 <BaseLayout title="Services" currentPage="/services">
-  <section class="relative grid-bg border-b border-[color:var(--color-border)]">
-    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
-      <div class="eyebrow mb-6 text-[color:var(--color-text-secondary)]">
-        <span class="text-[color:var(--color-accent)]">_</span> SERVICES
+  <section class="phead">
+    <div class="wrap">
+      <div class="phead__kicker">_ Services</div>
+      <h1 class="phead__title">Services<span class="cursor"></span></h1>
+      <div class="phead__counter">
+        <b>{services.categories.length.toString().padStart(2, "0")}</b> disciplines<br/>
+        <b>{deliverableCount}</b> deliverables
       </div>
-
-      <h1 class="font-[var(--font-display)] font-semibold text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em]">
-        Services<span class="cursor-u">_</span>
-      </h1>
-
-      <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] leading-relaxed max-w-2xl mt-8">
-        {services.intro}
-      </p>
+      <p class="phead__lead">{services.intro}</p>
     </div>
   </section>
 
-  <section class="border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)]">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+  <section class="section">
+    <div class="wrap">
+      <div class="grid-2">
         {services.categories.map((cat, i) => (
           <div data-reveal data-reveal-delay={String(i + 1)}>
             <ServiceCard
+              tone={cat.tone}
               title={cat.title}
               icon={cat.icon}
-              color={cat.color}
               description={cat.description}
-              items={cat.items.map(item => ({ name: item.name, description: item.description }))}
+              items={cat.items.map((it) => ({ name: it.name, description: it.description }))}
             />
           </div>
         ))}
@@ -40,17 +37,19 @@ import { services } from "../data/content";
     </div>
   </section>
 
-  <section class="bg-[color:var(--color-dark)] text-[color:var(--color-text-invert)] grid-bg grid-bg--dark">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center" data-reveal>
-      <h2 class="font-[var(--font-display)] font-semibold text-3xl md:text-5xl tracking-tight text-white">
-        {services.cta.text}<span class="cursor-u">_</span>
-      </h2>
-      <p class="text-base text-[color:var(--color-text-invert)] mt-5 max-w-xl mx-auto">{services.cta.subtext}</p>
-      <div class="flex justify-center mt-10">
-        <PlusButton href={services.cta.href} variant="primary" external>
-          {services.cta.label}
-        </PlusButton>
-      </div>
+  <section class="cta">
+    <div class="cta__bg"></div>
+    <div class="wrap cta__inner">
+      <div class="cta__eyebrow">/ let's talk</div>
+      <h2 class="cta__title">{services.cta.text}<span class="cursor"></span></h2>
+      <p class="cta__sub">{services.cta.subtext}</p>
+      <a
+        href={services.cta.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn--primary"
+        style="padding: 14px 22px; font-size: 13px;"
+      >{services.cta.label}</a>
     </div>
   </section>
 </BaseLayout>

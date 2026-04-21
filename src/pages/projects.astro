@@ -5,32 +5,47 @@ import { projects } from "../data/content";
 ---
 
 <BaseLayout title="Projects" currentPage="/projects">
-  <section class="relative grid-bg border-b border-[color:var(--color-border)]">
-    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
-      <div class="eyebrow mb-6 text-[color:var(--color-text-secondary)]">
-        <span class="text-[color:var(--color-accent)]">_</span> PROJECTS
+  <section class="phead">
+    <div class="wrap">
+      <div class="phead__kicker">_ Projects</div>
+      <h1 class="phead__title">Projects<span class="cursor"></span></h1>
+      <div class="phead__counter">
+        <b>{projects.length.toString().padStart(2, "0")}</b> selected<br/>
+        More on GitHub →
       </div>
-
-      <h1 class="font-[var(--font-display)] font-semibold text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em]">
-        Projects<span class="cursor-u">_</span>
-      </h1>
+      <p class="phead__lead">
+        A small, curated set — personal and academic work alongside client engagements.
+      </p>
     </div>
   </section>
 
-  <section class="bg-[color:var(--color-bg)]">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {projects.map((project, i) => (
-          <div data-reveal data-reveal-delay={String(i + 1)}>
-            <ProjectCard
-              title={project.title}
-              type={project.type}
-              description={project.description}
-              color={project.color}
-              links={project.links.map(l => ({ label: l.label, href: l.href, external: l.external }))}
-            />
-          </div>
-        ))}
+  <section class="section section--no-border">
+    <div class="wrap proj-grid">
+      {projects.map((p, i) => (
+        <div data-reveal data-reveal-delay={String(i + 1)}>
+          <ProjectCard
+            tone={p.tone}
+            title={p.title}
+            type={p.type}
+            description={p.description}
+            visual={p.visual}
+            links={p.links.map((l) => ({ label: l.label, href: l.href, external: l.external }))}
+          />
+        </div>
+      ))}
+
+      <div class="callout">
+        <div>
+          <div class="eyebrow" style="margin-bottom: 8px;">/ in the workshop</div>
+          <h3 class="callout__title">More projects coming soon.</h3>
+          <p class="callout__sub">
+            Most of my recent work has been under client NDA. For a fuller picture, see GitHub or reach out directly.
+          </p>
+        </div>
+        <div style="display: flex; gap: 8px; flex-shrink: 0;">
+          <a href="https://github.com/nicolagheza" target="_blank" rel="noopener noreferrer" class="btn btn--dark btn--sm">GitHub</a>
+          <a href="mailto:nicola@nicode.solutions" class="btn btn--primary btn--sm">Email Me</a>
+        </div>
       </div>
     </div>
   </section>

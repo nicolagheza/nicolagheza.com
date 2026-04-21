@@ -10,64 +10,46 @@ const socials = [
 ];
 ---
 
-<footer class="bg-[color:var(--color-dark)] text-[color:var(--color-text-invert)] border-t border-[color:var(--color-border-dark)] mt-0">
-  <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div class="md:col-span-1">
-      <div class="font-[var(--font-mono)] font-semibold text-2xl text-white tracking-tight">
-        NICODE<span class="text-[color:var(--color-accent)]">_</span>
-      </div>
-      <p class="text-xs font-[var(--font-mono)] text-[color:var(--color-text-muted)] mt-3">
-        di Gheza Nicola
-      </p>
-      <p class="text-xs font-[var(--font-mono)] text-[color:var(--color-text-muted)] mt-1">
-        P.IVA 04680240985
-      </p>
-    </div>
-
+<footer class="foot">
+  <div class="foot__grid">
     <div>
-      <div class="eyebrow text-[color:var(--color-text-muted)] mb-4">PAGES</div>
-      <ul class="flex flex-col gap-2">
-        {navigation.map(l => (
-          <li>
-            <a href={l.href} class="text-sm text-[color:var(--color-text-invert)] hover:text-[color:var(--color-accent)] transition-colors">
-              {l.label}
-            </a>
-          </li>
+      <div class="foot__brand">NICODE<span class="foot__brand-dot">_</span></div>
+      <div class="foot__meta">
+        di Gheza Nicola<br/>
+        P.IVA 04680240985<br/>
+        Valle Camonica, Italy
+      </div>
+    </div>
+    <div>
+      <div class="foot__eyebrow">Pages</div>
+      <ul class="foot__list">
+        {navigation.map((n) => (
+          <li><a href={n.href}>{n.label}</a></li>
         ))}
       </ul>
     </div>
-
     <div>
-      <div class="eyebrow text-[color:var(--color-text-muted)] mb-4">CONNECT</div>
-      <ul class="flex flex-col gap-2">
-        {socials.map(l => (
+      <div class="foot__eyebrow">Connect</div>
+      <ul class="foot__list">
+        {socials.map((s) => (
           <li>
             <a
-              href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
-              class="text-sm text-[color:var(--color-text-invert)] hover:text-[color:var(--color-accent)] transition-colors"
-            >
-              {l.label}
-            </a>
+              href={s.href}
+              target={s.external ? "_blank" : undefined}
+              rel={s.external ? "noopener noreferrer" : undefined}
+            >{s.label}</a>
           </li>
         ))}
       </ul>
     </div>
-
     <div>
-      <div class="eyebrow text-[color:var(--color-text-muted)] mb-4">CONTACT</div>
-      <a href="mailto:nicola@nicode.solutions" class="text-sm text-[color:var(--color-text-invert)] hover:text-[color:var(--color-accent)] transition-colors block">
-        nicola@nicode.solutions
-      </a>
+      <div class="foot__eyebrow">Contact</div>
+      <ul class="foot__list">
+        <li><a href="mailto:nicola@nicode.solutions">nicola@nicode.solutions</a></li>
+      </ul>
     </div>
   </div>
-
-  <div class="border-t border-[color:var(--color-border-dark)]">
-    <div class="max-w-6xl mx-auto px-6 py-6">
-      <p class="text-xs font-[var(--font-mono)] text-[color:var(--color-text-muted)]">
-        &copy; {year} NICODE di Gheza Nicola. All rights reserved.
-      </p>
-    </div>
+  <div class="foot__bottom">
+    <span>© {year} NICODE di Gheza Nicola.</span>
   </div>
 </footer>

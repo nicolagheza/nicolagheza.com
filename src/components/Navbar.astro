@@ -1,6 +1,5 @@
 ---
 import { navigation } from "../data/content";
-import PlusButton from "./PlusButton.astro";
 
 interface Props {
   currentPage: string;
@@ -8,75 +7,48 @@ interface Props {
 const { currentPage } = Astro.props;
 ---
 
-<nav class="sticky top-0 z-50 bg-[color:var(--color-bg)]/85 backdrop-blur-md border-b border-[color:var(--color-border)]">
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3.5">
-    <a href="/" class="flex items-center gap-0 font-[var(--font-mono)] font-semibold tracking-tight text-[color:var(--color-text)] text-base">
-      NICODE<span class="text-[color:var(--color-accent)]">_</span>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="brand">
+      NICODE<span class="brand__dot">_</span>
     </a>
 
-    <button
-      id="nav-toggle"
-      class="md:hidden flex flex-col gap-1.5 p-2 rounded-md hover:bg-[color:var(--color-surface-2)] transition-colors"
-      aria-label="Toggle navigation"
-      aria-expanded="false"
-    >
-      <span class="block w-5 h-[1.5px] bg-[color:var(--color-text)] rounded-full"></span>
-      <span class="block w-5 h-[1.5px] bg-[color:var(--color-text)] rounded-full"></span>
-      <span class="block w-5 h-[1.5px] bg-[color:var(--color-text)] rounded-full"></span>
-    </button>
-
-    <div id="nav-links" class="hidden md:flex gap-1 items-center">
+    <div class="nav__links">
       {navigation.map((item) => (
-        <a
-          href={item.href}
-          class:list={[
-            "font-[var(--font-mono)] text-xs uppercase tracking-[0.08em] px-3 py-2 rounded-md transition-colors duration-200",
-            currentPage === item.href
-              ? "text-[color:var(--color-text)]"
-              : "text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-text)]",
-          ]}
-        >
-          {item.label}
-        </a>
+        <a href={item.href} class={currentPage === item.href ? "is-active" : ""}>{item.label}</a>
       ))}
     </div>
 
-    <div class="hidden md:block">
-      <PlusButton href="mailto:nicola@nicode.solutions" variant="primary">
-        Email Me
-      </PlusButton>
+    <div class="nav__cta">
+      <a href="mailto:nicola@nicode.solutions" class="btn btn--primary btn--sm">Email Me</a>
     </div>
+
+    <button
+      id="nav-toggle"
+      class="nav__toggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)] px-4 pb-4">
+  <div id="nav-mobile" class="nav__mobile">
     {navigation.map((item) => (
-      <a
-        href={item.href}
-        class:list={[
-          "block font-[var(--font-mono)] text-xs uppercase tracking-[0.08em] text-center py-3 px-4 rounded-md transition-colors mb-1",
-          currentPage === item.href
-            ? "text-[color:var(--color-accent)] bg-[color:var(--color-accent-soft)]"
-            : "text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-text)] hover:bg-[color:var(--color-surface-2)]",
-        ]}
-      >
-        {item.label}
-      </a>
+      <a href={item.href} class={currentPage === item.href ? "is-active" : ""}>{item.label}</a>
     ))}
-    <a href="mailto:nicola@nicode.solutions" class="btn-plus btn-plus--primary w-full justify-center mt-3">
-      Email Me
-    </a>
+    <a href="mailto:nicola@nicode.solutions" class="btn btn--primary btn--sm">Email Me</a>
   </div>
 </nav>
 
 <script>
   document.addEventListener("astro:page-load", () => {
     const toggle = document.getElementById("nav-toggle");
-    const menu = document.getElementById("mobile-menu");
+    const menu = document.getElementById("nav-mobile");
     if (toggle && menu) {
       toggle.addEventListener("click", () => {
-        const isOpen = !menu.classList.contains("hidden");
-        menu.classList.toggle("hidden");
-        toggle.setAttribute("aria-expanded", String(!isOpen));
+        const isOpen = menu.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
       });
     }
   });

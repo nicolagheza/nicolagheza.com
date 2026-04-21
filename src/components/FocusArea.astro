@@ -1,33 +1,33 @@
 ---
+import type { Tone } from "../data/content";
+
 interface Props {
+  tone: Tone;
+  num: string;
   title: string;
   focus: string;
   details: string[];
   impact: string;
-  color: "blue" | "pink" | "green" | "yellow";
 }
 
-const { title, focus, details, impact } = Astro.props;
+const { tone, num, title, focus, details, impact } = Astro.props;
 ---
 
-<div class="corner-frame relative group p-8 bg-[color:var(--color-surface)] transition-colors hover:bg-[color:var(--color-accent-soft)]">
-  <span class="corner-frame__bl"></span>
-  <span class="corner-frame__br"></span>
-
-  <h3 class="font-[var(--font-mono)] font-semibold text-lg tracking-tight mb-3 group-hover:text-[color:var(--color-accent)] transition-colors">
-    {title}
-  </h3>
-  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed mb-5">
-    {focus}
-  </p>
-  <div class="flex flex-wrap gap-2 mb-5">
-    {details.map((tag) => (
-      <span class="font-[var(--font-mono)] text-xs text-[color:var(--color-text-secondary)] bg-[color:var(--color-surface-2)] px-3 py-1 rounded-full bracket-label">
-        {tag}
-      </span>
-    ))}
+<article class={`tile tile--${tone}`}>
+  <span class="corner-bl"></span>
+  <span class="corner-br"></span>
+  <div class="focus">
+    <div class="focus__rail">
+      <span class="focus__rail-label">{num}</span>
+    </div>
+    <div class="focus__body">
+      <div class="focus__num">/ {num}</div>
+      <h3 class="focus__title">{title}</h3>
+      <p class="focus__text">{focus}</p>
+      <div class="focus__tags">
+        {details.map((t) => <span class="focus__tag">{t}</span>)}
+      </div>
+      <p class="focus__impact">{impact}</p>
+    </div>
   </div>
-  <p class="text-sm text-[color:var(--color-text-secondary)] leading-relaxed">
-    {impact}
-  </p>
-</div>
+</article>
