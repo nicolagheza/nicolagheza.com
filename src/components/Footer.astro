@@ -1,55 +1,26 @@
 ---
-import { navigation } from "../data/content";
-
 const year = new Date().getFullYear();
-
-const socials = [
-  { label: "GitHub", href: "https://github.com/nicolagheza", external: true },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nicola-gheza-9995bb116/", external: true },
-  { label: "Email", href: "mailto:nicola@nicode.solutions" },
-];
 ---
 
 <footer class="foot">
-  <div class="foot__grid">
-    <div>
-      <div class="foot__brand">NICODE<span class="foot__brand-dot">_</span></div>
-      <div class="foot__meta">
-        di Gheza Nicola<br/>
-        P.IVA 04680240985<br/>
-        Valle Camonica, Italy
+  <div class="wrap">
+    <div class="foot__inner">
+      <div>
+        <div class="foot__brand">nicode<span class="foot__brand-dot">.</span></div>
+        <div class="foot__meta">Nicola Gheza · AI Engineer · Valle Camonica, IT</div>
       </div>
+      <nav class="foot__nav">
+        <a href="#about">About</a>
+        <a href="#practice">Practice</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="mailto:nicola@nicode.solutions">Email</a>
+        <a href="https://github.com/nicolagheza" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
     </div>
-    <div>
-      <div class="foot__eyebrow">Pages</div>
-      <ul class="foot__list">
-        {navigation.map((n) => (
-          <li><a href={n.href}>{n.label}</a></li>
-        ))}
-      </ul>
+    <div class="foot__bottom">
+      <span>© {year} Nicola Gheza — nicode.</span>
+      <span>Designed &amp; built in Valle Camonica</span>
     </div>
-    <div>
-      <div class="foot__eyebrow">Connect</div>
-      <ul class="foot__list">
-        {socials.map((s) => (
-          <li>
-            <a
-              href={s.href}
-              target={s.external ? "_blank" : undefined}
-              rel={s.external ? "noopener noreferrer" : undefined}
-            >{s.label}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div>
-      <div class="foot__eyebrow">Contact</div>
-      <ul class="foot__list">
-        <li><a href="mailto:nicola@nicode.solutions">nicola@nicode.solutions</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot__bottom">
-    <span>© {year} NICODE di Gheza Nicola.</span>
   </div>
 </footer>

@@ -2,32 +2,270 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MarqueeBanner from "../components/MarqueeBanner.astro";
 import HeroSection from "../components/HeroSection.astro";
-import CapabilityTile from "../components/CapabilityTile.astro";
-import { homepage } from "../data/content";
+import { homepage, about, projects } from "../data/content";
+
+const practice = [
+  {
+    num: "01",
+    code: "AI / ML",
+    title: "AI & Machine Learning",
+    lede: "Intelligent systems built with foundation models, custom pipelines, and RAG architectures — turned into software that holds up in production.",
+    list: [
+      "LLM applications & Retrieval-Augmented Generation",
+      "Model fine-tuning & custom ML pipelines",
+      "Agentic workflows and knowledge agents",
+    ],
+    proof: "Energy-prediction models for home automation; a RAG application inside a digital-twin solution for buildings.",
+  },
+  {
+    num: "02",
+    code: "SW ENG",
+    title: "Software Engineering",
+    lede: "Scalable backends, APIs, and infrastructure that power modern applications — with clear architecture and honest performance budgets.",
+    list: [
+      "REST & GraphQL APIs, payment integrations",
+      "System architecture & queue-based pipelines",
+      "Cloud & DevOps, CI/CD, observability",
+    ],
+    proof: "Years shipping high-throughput backends across travel, blockchain, and AI platforms.",
+  },
+  {
+    num: "03",
+    code: "CV",
+    title: "Computer Vision",
+    lede: "Extracting actionable insight from images and video — object detection, document processing, and custom deep-learning models.",
+    list: [
+      "Object detection & tracking (YOLO, custom)",
+      "OCR & document intelligence",
+      "CCTV analytics & quality control",
+    ],
+    proof: "Fine-tuning YOLO for waste detection; deep-learning research on fruits image recognition (BSc thesis).",
+  },
+  {
+    num: "04",
+    code: "DATA",
+    title: "Data Engineering & Analytics",
+    lede: "Pipelines and tooling that turn raw, messy data into reliable inputs — plus the dashboards that make it useful to humans.",
+    list: [
+      "ETL pipelines & multi-source ingestion",
+      "Web scraping & data extraction",
+      "Analytics dashboards & reporting",
+    ],
+    proof: "Data flows keeping backends fed with clean, structured inputs across conversational-AI and travel platforms.",
+  },
+];
+
+const xp = [
+  {
+    current: true,
+    chip: "Current · AI",
+    role: "AI Engineer",
+    company: "nicode.",
+    location: "Remote · Self-employed",
+    desc: "ML models for home-automation energy prediction, a YOLO-based computer vision system for waste detection, and a RAG application inside a digital-twin solution for buildings.",
+    year: "Dec 2019 → Present",
+  },
+  {
+    chip: "Backend",
+    role: "Backend Developer",
+    company: "Sportit",
+    location: "Remote (IT) · Snowit, Bikeit, Discovera, Tribala",
+    desc: "Scalable backend systems across Sportit's portfolio of sports and travel platforms — REST & GraphQL APIs, payment integrations, background task processing, and a modular email pipeline.",
+    year: "Mar 2022 → Mar 2025",
+  },
+  {
+    chip: "Backend · Blockchain",
+    role: "Software Engineer",
+    company: "SteelTrace B.V.",
+    location: "Maastricht (NL)",
+    desc: "Backend architecture for a material certification platform tracing steel supply-chain data on private Ethereum. Performance work on data-intensive operations and team management of junior devs.",
+    year: "Aug 2020 → Oct 2021",
+  },
+  {
+    chip: "Conversational AI",
+    role: "Backend Developer",
+    company: "CX Company",
+    location: "Maastricht (NL) · now cm.com",
+    desc: "Backend features for a conversational AI platform powering virtual assistants and chatbots for enterprise clients. REST APIs and ETL pipelines for multi-source data integration.",
+    year: "Feb 2019 → Aug 2020",
+  },
+  {
+    chip: "Fullstack · Blockchain",
+    role: "Software Engineer",
+    company: "Consense Data Exchange",
+    location: "Heerlen (NL)",
+    desc: "A blockchain-based informed-consent system for medical research, automating consent management for clinical trials. Fullstack development across multiple modules.",
+    year: "Jul 2018 → Dec 2018",
+  },
+  {
+    chip: "NLP",
+    role: "AI Engineer",
+    company: "WildFire Learning",
+    location: "Brighton (UK)",
+    desc: "NLP models that automatically generate multiple-choice and fill-in-the-blank questions from documents, served via Node.js backend services for an e-learning platform.",
+    year: "Jul 2017 → Dec 2017",
+  },
+];
+
+const projTones: Record<string, string> = { ai: "proj--ai", sw: "proj--sw", cv: "proj--cv", de: "proj--de" };
 ---
 
 <BaseLayout currentPage="/">
+  <a id="top"></a>
   <MarqueeBanner items={homepage.marqueeItems} />
   <HeroSection />
 
-  <section class="section" style="padding-top: 48px;">
+  <!-- ABOUT -->
+  <section class="section" id="about">
     <div class="wrap">
-      <div class="section__head">
+      <div class="section__head" data-reveal>
         <div>
-          <div class="eyebrow">/ services</div>
-          <h2 class="section__title">What I can do for you.</h2>
+          <div class="eyebrow">/ about</div>
+          <h2 class="section__title">AI Engineer</h2>
         </div>
-        <p class="section__intro">
-          Four practice areas — from shipping software to training models — that combine on most engagements.
-        </p>
+        <p class="section__intro">I turn research-flavored problems into boring software that runs in production. Remote-first, clear communication, shipping mentality.</p>
       </div>
-      <div class="grid-2">
-        {homepage.services.map((svc, i) => (
-          <div data-reveal data-reveal-delay={String(i + 1)}>
-            <CapabilityTile tone={svc.tone} num={svc.num} title={svc.title} tags={svc.tags} />
-          </div>
+
+      <div class="split" data-reveal>
+        <div>
+          <span class="status"><span class="status__dot"></span>Open for projects</span>
+          {about.bio.map((p) => <p class="bio-p" set:html={p} />)}
+        </div>
+        <dl class="factbox">
+          <div class="factbox__row"><span class="factbox__k">Base</span><span class="factbox__v">Valle Camonica, IT</span></div>
+          <div class="factbox__row"><span class="factbox__k">Coffees/day</span><span class="factbox__v">~4 (load-bearing)</span></div>
+          <div class="factbox__row"><span class="factbox__k">Stack</span><span class="factbox__v">Whatever ships</span></div>
+          <div class="factbox__row"><span class="factbox__k">Time zone</span><span class="factbox__v">CET, mostly</span></div>
+          <div class="factbox__row"><span class="factbox__k">LOC/yr</span><span class="factbox__v">Net negative, ideally</span></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE -->
+  <section class="section" id="practice">
+    <div class="wrap">
+      <div class="section__head" data-reveal>
+        <div>
+          <div class="eyebrow">/ practice</div>
+          <h2 class="section__title">What I do, and how.</h2>
+        </div>
+        <p class="section__intro">Four disciplines that combine on most engagements — from shipping scalable backends to training production ML models.</p>
+      </div>
+
+      <div class="grid-2" data-reveal-stagger>
+        {practice.map((p) => (
+          <article class="pc">
+            <header class="pc__head">
+              <div class="pc__head-left">
+                <span class="pc__num">{p.num}</span>
+                <span class="pc__code">{p.code}</span>
+              </div>
+              <span class="pc__marker" aria-hidden="true">◆</span>
+            </header>
+            <div class="pc__body">
+              <h3 class="pc__title">{p.title}</h3>
+              <p class="pc__lede">{p.lede}</p>
+              <div class="pc__divider"></div>
+              <div>
+                <div class="pc__label">What I build</div>
+                <ul class="pc__list">
+                  {p.list.map((l) => <li>{l}</li>)}
+                </ul>
+              </div>
+              <div class="pc__impact">
+                <span class="pc__impact-k">Proof</span>
+                <span class="pc__impact-v">{p.proof}</span>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section__head" data-reveal>
+        <div>
+          <div class="eyebrow">/ experience</div>
+          <h2 class="section__title">Nine years,<br/>one trajectory.</h2>
+        </div>
+        <p class="section__intro">From NLP research in Brighton to digital-twin RAG systems today — a consistent thread of shipping AI and backend software for real clients.</p>
+      </div>
+
+      <ol class="vtl" data-reveal-stagger>
+        {xp.map((x) => (
+          <li class={`vtl__item${x.current ? " vtl__item--current" : ""}`}>
+            <div class="vtl__rail" aria-hidden="true">
+              <span class="vtl__dot"></span>
+            </div>
+            <div class="vtl__card">
+              <div class="vtl__head">
+                <div class="vtl__chip"><span class="vtl__chip-dot"></span>{x.chip}</div>
+                <div class="vtl__year">{x.year}</div>
+              </div>
+              <h3 class="vtl__role">{x.role} <em>@ {x.company}</em></h3>
+              <div class="vtl__company">{x.location}</div>
+              <p class="vtl__desc">{x.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section__head" data-reveal>
+        <div>
+          <div class="eyebrow">/ selected projects</div>
+          <h2 class="section__title">Things I've built.</h2>
+        </div>
+        <p class="section__intro">A mix of client work, independent experiments, and academic research — each one touching real data or real hardware.</p>
+      </div>
+
+      <div class="proj-grid" data-reveal-stagger>
+        {projects.map((p) => (
+          <article class={`pcard ${projTones[p.tone]}`}>
+            <div class="pcard__visual" aria-hidden="true">
+              <span class="pcard__mark">{p.visual}</span>
+            </div>
+            <div class="pcard__body">
+              <div class="pcard__type">{p.type}</div>
+              <h3 class="pcard__title">{p.title}</h3>
+              <p class="pcard__desc">{p.description}</p>
+              <div class="pcard__links">
+                {p.links.map((l) => (
+                  <a
+                    href={l.href}
+                    target={l.external ? "_blank" : undefined}
+                    rel={l.external ? "noopener noreferrer" : undefined}
+                    class="btn btn--ghost btn--sm"
+                  >{l.label}</a>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="cta__bg"></div>
+    <div class="wrap cta__inner" data-reveal>
+      <div class="cta__eyebrow">/ let's build something</div>
+      <h2 class="cta__title">Ready to discuss your project?</h2>
+      <p class="cta__sub">Let's talk about how I can help your business grow.</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a href="https://calendly.com/nicode-solutions/30min" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Schedule a Call</a>
+        <a href="mailto:nicola@nicode.solutions" class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.2)">Email Me</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+

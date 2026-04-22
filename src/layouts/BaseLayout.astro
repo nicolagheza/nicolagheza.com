@@ -55,7 +55,9 @@ const fullTitle = title === siteConfig.title ? title : `${title} | ${siteConfig.
           },
           { threshold: 0.1 }
         );
-        document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
+        document
+          .querySelectorAll("[data-reveal],[data-reveal-stagger]")
+          .forEach((el) => observer.observe(el));
       });
     </script>
   </body>

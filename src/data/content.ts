@@ -7,19 +7,15 @@ export const siteConfig = {
 } as const;
 
 export const navigation = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/#about" },
+  { label: "Practice", href: "/#practice" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const homepage = {
   heading: "Nicola Gheza",
-  subtitles: [
-    { text: "Software Engineering", tone: "sw" as Tone },
-    { text: "Data Science", tone: "de" as Tone },
-    { text: "Artificial Intelligence", tone: "ai" as Tone },
-  ],
   tagline: "AI Engineer | BSc Data Science & AI (Maastricht University)",
   meta: [
     { label: "Available for new projects", dot: true },
@@ -27,17 +23,6 @@ export const homepage = {
     { label: "BSc Data Science & AI · Maastricht University" },
   ],
   bio: "I help businesses build <b>intelligent software</b> — from AI-powered applications and computer vision systems to scalable backends and data pipelines. Whether you need a custom ML model, a RAG-powered knowledge base, or a reliable API, I engineer solutions that work in production.",
-  status: {
-    title: "// status",
-    id: "0x01",
-    rows: [
-      { k: "Role", v: "AI Engineer" },
-      { k: "Since", v: "2017" },
-      { k: "Exp", v: "9+ yrs" },
-      { k: "Lat", v: "45.93° N" },
-      { k: "Lon", v: "10.24° E" },
-    ],
-  },
   links: [
     { label: "Email Me", href: "mailto:nicola@nicode.solutions", variant: "primary" as const },
     { label: "GitHub", href: "https://github.com/nicolagheza", variant: "dark" as const, external: true },

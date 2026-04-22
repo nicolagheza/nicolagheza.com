@@ -1,12 +1,5 @@
 ---
 import { homepage } from "../data/content";
-
-const toneSwatch: Record<string, string> = {
-  ai: "var(--c-ai)",
-  sw: "var(--c-sw)",
-  cv: "var(--c-cv)",
-  de: "var(--c-de)",
-};
 ---
 
 <section class="hero">
@@ -19,24 +12,14 @@ const toneSwatch: Record<string, string> = {
             {m.dot && <span class="hero__meta-dot"></span>}
             {m.label}
           </span>
-          {i < homepage.meta.length - 1 && <span class="hero__meta-sep"></span>}
+          {i < homepage.meta.length - 1 && <span class="hero__meta-sep" aria-hidden="true"></span>}
         </>
       ))}
     </div>
 
     <h1 class="hero__title">
-      <span id="hero-name">{homepage.heading}</span><span class="cursor"></span>
+      <span id="hero-name">{homepage.heading}</span><span id="hero-cursor" class="cursor"></span>
     </h1>
-
-    <div class="hero__specs">
-      {homepage.subtitles.map((s) => (
-        <span class="hero__spec">
-          <span class="hero__spec-swatch" style={`background: ${toneSwatch[s.tone]}`}></span>
-          <span class="hero__spec-k">//</span>
-          <span class="hero__spec-v">{s.text}</span>
-        </span>
-      ))}
-    </div>
 
     <p class="hero__bio" set:html={homepage.bio} />
 
@@ -53,25 +36,17 @@ const toneSwatch: Record<string, string> = {
       ))}
     </div>
 
-    <aside class="hero__side">
-      <div class="hero__side-title">
-        <span>{homepage.status.title}</span>
-        <span class="hero__side-title-id">{homepage.status.id}</span>
-      </div>
-      {homepage.status.rows.map((row) => (
-        <div class="hero__side-row">
-          <span class="hero__side-k">{row.k}</span>
-          <span class="hero__side-v">{row.v}</span>
-        </div>
-      ))}
-    </aside>
+    <aside class="hero__annotation" aria-hidden="true">// status: ok
+↳ no LLMs
+   harmed.</aside>
   </div>
 </section>
 
 <script>
   document.addEventListener("astro:page-load", () => {
     const el = document.getElementById("hero-name");
-    if (!el) return;
+    const cursor = document.getElementById("hero-cursor");
+    if (!el || !cursor) return;
 
     const names = ["Nicola Gheza", "NICODE"];
     let current = 0;
@@ -106,10 +81,12 @@ const toneSwatch: Record<string, string> = {
     function cycle() {
       if (animating) return;
       animating = true;
+      cursor!.classList.add("cursor--typing");
       deleteText(() => {
         current = (current + 1) % names.length;
         typeText(names[current], () => {
           animating = false;
+          cursor!.classList.remove("cursor--typing");
         });
       });
     }
